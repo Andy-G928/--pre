@@ -61,11 +61,43 @@
 \titlepageinfo{
   \begin{tabular}{@{}l@{}}
     RAND Journal of Economics, 2022\\
-    Group presentation (30-minutes)\\
+    Group presentation (40 minutes)\\
     May 18, 2026
   \end{tabular}
 }
 \titlepagefooter{}
+
+\setbeamertemplate{section page}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[lingnangrey!30!white]
+      ([yshift=-1.25cm]current page.north west)
+      rectangle
+      ([yshift=-4.65cm]current page.north east);
+    \fill[darkred!80!black]
+      ([yshift=0.52cm]current page.south west)
+      rectangle
+      (current page.south east);
+    \fill[darkred!80!black]
+      ([xshift=0.86cm,yshift=-1.25cm]current page.north west)
+      rectangle
+      ([xshift=1.04cm,yshift=-4.65cm]current page.north west);
+    \node[anchor=west,inner sep=0pt]
+      at ([xshift=1.35cm,yshift=-2.05cm]current page.north west)
+      {\color{darkred!80!black}\Large\bfseries Part \thesection};
+    \node[anchor=west,text width=0.78\paperwidth,align=left,inner sep=0pt]
+      at ([xshift=1.35cm,yshift=-3.25cm]current page.north west)
+      {\usebeamerfont{title}\color{black}\insertsectionhead};
+    \node[anchor=west,inner sep=0pt]
+      at ([xshift=1.35cm,yshift=1.25cm]current page.south west)
+      {\color{white}\small Should Platforms Be Allowed to Sell on Their Own Marketplaces?};
+  \end{tikzpicture}
+}
+
+\AtBeginSection[]{
+  \begin{frame}[plain]
+    \sectionpage
+  \end{frame}
+}
 
 
 \begin{document}

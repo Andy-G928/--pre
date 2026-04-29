@@ -1,6 +1,6 @@
 # Advanced Microeconomics Presentation
 
-本项目是高级微观经济学博士课程的 30 分钟小组汇报 slides。汇报论文为 Hagiu, Teh, and Wright (2022), "Should Platforms Be Allowed to Sell on Their Own Marketplaces?"，汇报时间为 2026 年 5 月 18 日。
+本项目是高级微观经济学博士课程的 40 分钟小组汇报 slides。汇报论文为 Hagiu, Teh, and Wright (2022), "Should Platforms Be Allowed to Sell on Their Own Marketplaces?"，汇报时间为 2026 年 5 月 18 日。
 
 slides 正文使用英文。中文可以用于 README、协作说明、个人笔记和讨论记录，但不要写进正式 slides 页面。
 
@@ -363,7 +363,7 @@ git status
 全组合并前请检查：
 
 - 5 个 section 的逻辑是否连贯。
-- 总页数和内容量是否适合 30 分钟。
+- 总页数和内容量是否适合 40 分钟。
 - 模型设定、均衡分析、政策含义是否前后统一。
 - 符号是否一致。
 - 相同概念是否使用同一个英文表达。
@@ -427,4 +427,4 @@ xelatex "demo.tex"
 4. 第 4 位和第 5 位重点统一政策比较和福利分析。
 5. 最后统一格式、页数、英文表达和讲稿节奏。
 
-建议最后至少预留一次完整排练。30 分钟汇报中，每个人大约 5-6 分钟，但模型和均衡部分可能需要更多时间，可以根据实际内容再调整。
+建议最后至少预留一次完整排练。40 分钟汇报中，每个人平均大约 8 分钟，但模型和均衡部分可能需要更多时间，可以根据实际内容再调整。

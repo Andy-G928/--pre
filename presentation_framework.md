@@ -752,21 +752,21 @@ Presenter 4 到 Presenter 5：
 
 “到目前为止还没有考虑监管者最担心的 imitation 和 self-preferring。加入这些行为后，结论会不会反转？”
 
-### 6.2 适合 30 分钟汇报的时间安排
+### 6.2 适合 40 分钟汇报的时间安排
 
 建议时间分配：
 
-- Presenter 1：4 分钟。
-- Presenter 2：7 分钟。
-- Presenter 3：8 分钟。
-- Presenter 4：5 分钟。
-- Presenter 5：6 分钟。
+- Presenter 1：6 分钟。
+- Presenter 2：9 分钟。
+- Presenter 3：11 分钟。
+- Presenter 4：6 分钟。
+- Presenter 5：8 分钟。
 
 虽然有 5 位成员，但理论重点集中在 Presenter 2 和 Presenter 3，因此这两部分应略长。
 
 ### 6.3 建议 slides 结构
 
-建议总页数控制在 24-30 页左右：
+建议总页数控制在 30-38 页左右：
 
 1. Title。
 2. Motivation。
