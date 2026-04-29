@@ -1,3 +1,23 @@
 /.vscode
 /AGENTS.md
 /CLAUDE.md
+
+# LaTeX build artifacts in slides
+/slides/*.aux
+/slides/*.bbl
+/slides/*.bcf
+/slides/*.blg
+/slides/*.fdb_latexmk
+/slides/*.fls
+/slides/*.log
+/slides/*.nav
+/slides/*.out
+/slides/*.run.xml
+/slides/*.snm
+/slides/*.synctex.gz
+/slides/*.toc
+/slides/*.vrb
+
+# Keep slide source and final PDF files trackable
+!/slides/*.tex
+!/slides/*.pdf

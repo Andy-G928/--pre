@@ -1,81 +1,72 @@
-\documentclass[aspectratio=169,AutoFakeBold,AutoFakeSlant]{beamer}
+%!TEX encoding = UTF-8 Unicode
+%!TEX program = xelatex
+
+\documentclass[UTF8,10pt,aspectratio=169,dvipsnames,svgnames,x11names]{beamer}
 
 \usepackage[british]{babel}
-\usepackage{graphicx,hyperref,sysu,url}
-
-%% Chinese support
-% \usepackage{ctex}
-
-\usepackage{newtxmath}
-\RequirePackage{booktabs}
-\usepackage{multicol} 
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
 \usepackage{multirow}
-\usepackage[ruled,linesnumbered]{algorithm2e}
 \usepackage{color}
 
-% colors
-\definecolor{sysugreen}{RGB}{0,88,38}
-\definecolor{sysugreendark}{RGB}{5,71,25}
+\hypersetup{urlcolor=blue}
 
-% Require XeLaTeX
-\RequirePackage{fontspec,xltxtra,xunicode}
-% English fonts
-\setmainfont[Mapping=tex-text]{Times New Roman}
-\setsansfont[Mapping=tex-text]{Arial}
+\usetheme{lingnan}
+\usefonttheme{serif}
+
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+  \setsansfont{Times New Roman}
+}{
+  \setmainfont{TeX Gyre Termes}
+  \setsansfont{TeX Gyre Termes}
+}
 \setmonofont{Consolas}
+\setmathfont{TeX Gyre Termes Math}
 
-% Math font
-\usefonttheme[onlymath]{serif}
+\IfFontExistsTF{Microsoft YaHei}{
+  \setCJKmainfont{Microsoft YaHei}
+  \setCJKsansfont{Microsoft YaHei}
+}{
+  \IfFontExistsTF{FandolSong-Regular}{
+    \setCJKmainfont{FandolSong-Regular}
+    \setCJKsansfont{FandolHei-Regular}
+  }{}
+}
 
+\setbeamerfont{title}{family=\sffamily}
+\setbeamerfont{frametitle}{family=\sffamily}
+\setbeamerfont{section title}{family=\sffamily}
+\setbeamerfont{date}{size=\small}
+\setcounter{tocdepth}{1}
+\setbeamertemplate{caption}[numbered]
 
-% Presentation title:
-%  1 short title displayed in the footer;
-%  2 full title displayed on the title page.
 \title[Platform Dual Mode]{
   Should Platforms Be Allowed to Sell\\
   on Their Own Marketplaces?}
-
-% Author information:
-%  1 short author information displayed in the footer;
-%  2 contact information.
-% \author[Author Name]{
-%   Presenter \\\medskip
-%   {\small \url{netid@mail2.sysu.edu.cn}} \\
-%   {\small \url{www.sysu.edu.cn}}
-% }
+\subtitle{Advanced Microeconomics Presentation}
 \author[Group 1]{
   \textbf{Author:} Andrei Hagiu, Tat-How Teh, and Julian Wright
   \texorpdfstring{\\\medskip {\small \textbf{Reporter:} Group 1}}{}
 }
-
-% Institute information:
-%  1 short institute displayed in the header;
-%  2 institute displayed on the title page.
-\institute[Sun Yat-Sen University]{
-  Sun Yat-Sen University}
-
-%% Date information
-%  1 short date displayed in the footer;
-%  2 date displayed on the title page.
+\institute[Sun Yat-Sen University]{Sun Yat-Sen University}
 \date[May 18, 2026]{May 18, 2026}
-
+\titlegraphic{\includegraphics[width=0.42\textwidth]{image/logo4.png}}
 
 \begin{document}
 
-\begin{frame}
-  % Title page
-  \titlepage
-\end{frame}
-% Do not count the title page.
+\frame[plain]{\titlepage}
 \setcounter{framenumber}{0}
 
-\begin{frame}
-  % Contents page
-  \frametitle{Contents}
-  % Two-column layout
-  % \begin{multicols}{2}
-  %   \tableofcontents
-  % \end{multicols}
+\begin{frame}{Contents}
+  \footnotesize
   \tableofcontents[hideallsubsections]
 \end{frame}
 
@@ -85,7 +76,7 @@
   \frametitle{Motivation: A Dual Role}
   \small
   Many large platforms now play two roles at the same time.
-  
+
   (Eg. Amazon, JD.com, Apple App Store...)
 
   \begin{itemize}
@@ -94,7 +85,7 @@
   \end{itemize}
 
   \begin{block}{The key tension}
-    The platform is both the market organizer and one of the sellers in the market.
+    The platform is both the market \textbf{organizer} and one of the \textbf{sellers} in the market.
   \end{block}
 \end{frame}
 
