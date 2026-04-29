@@ -1,7 +1,0 @@
-\babel@toc {british}{}\relax 
-\beamer@sectionintoc {1}{Research Question}{3}{0}{1}
-\beamer@sectionintoc {2}{Baseline Model}{7}{0}{2}
-\beamer@sectionintoc {3}{Equilibrium Analysis}{13}{0}{3}
-\beamer@sectionintoc {4}{Ban on Dual Mode}{21}{0}{4}
-\beamer@sectionintoc {5}{Policy and Extensions}{24}{0}{5}
-\beamer@subsectionintoc {5}{1}{Conclusion}{31}{0}{5}
