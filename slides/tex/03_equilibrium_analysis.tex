@@ -1,0 +1,181 @@
+﻿\section{Equilibrium Analysis}
+
+\begin{frame}
+  \frametitle{Marketplace Mode}
+  \small
+  In marketplace mode, $M$ only charges commission $\tau$.
+
+  \begin{equation*}
+    p_i \leq \tau+\Delta, \qquad p_o \leq \tau+\Delta-b
+  \end{equation*}
+
+  \begin{block}{Showrooming constraint}
+    If $\tau>b$, seller $S$ can use the platform for discovery and then sell directly.
+  \end{block}
+
+  \begin{alertblock}{Intuition}
+    The platform can charge at most the extra convenience value $b$ that it gives consumers.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Marketplace Equilibrium}
+  \small
+  Proposition 1:
+
+  \begin{equation*}
+    \tau^{mkt}=b, \qquad
+    G(\nu)=K'(\Delta^{mkt}), \qquad
+    p_i^*=b+\Delta^{mkt}
+  \end{equation*}
+
+  \begin{equation*}
+    \Pi^{mkt}=bG(\nu), \qquad
+    \pi^{mkt}=\Delta^{mkt}G(\nu)-K(\Delta^{mkt})
+  \end{equation*}
+
+  \begin{block}{Intuition}
+    $M$ sets the highest fee that does not push trade outside the platform. $S$ invests until marginal cost equals marginal market gain.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Seller Mode}
+  \small
+  In seller mode, the platform only sells its own product.
+
+  \begin{equation*}
+    \max_{p_m\leq b+\sigma} p_m G(\nu+b+\sigma-p_m)
+  \end{equation*}
+
+  The competitive constraint binds:
+
+  \begin{equation*}
+    p_m^*=b+\sigma
+  \end{equation*}
+
+  \begin{block}{Proposition 2}
+    $M$ sells to all consumers, while $S$ sells to no one.
+  \end{block}
+
+  \begin{alertblock}{Intuition}
+    The platform captures its convenience value and its product advantage, but consumers do not discover $S$.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dual Mode: Two Pricing Cases}
+  \small
+  In dual mode, $M$ both charges commission and sells its own product.
+
+  \begin{block}{Case 1: $\sigma \geq \Delta$}
+    The platform's own product is good enough. Consumers buy from $M$.
+    \[
+      p_i^*=\tau, \qquad p_m^*=\tau+\sigma-\Delta
+    \]
+  \end{block}
+
+  \begin{block}{Case 2: $\Delta>\sigma$}
+    Seller $S$ has the better product. But $M$ still puts pressure on $S$'s price.
+  \end{block}
+
+  \begin{alertblock}{Intuition}
+    Dual mode matters most when $S$ is better, but $M$ can still discipline $S$'s price.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Price Squeeze}
+  \small
+  In the price squeeze equilibrium:
+
+  \begin{equation*}
+    p_i^*=p_m^*+\Delta-\sigma
+  \end{equation*}
+
+  \begin{equation*}
+    p_m^*\in
+    \left[
+    \max\{\tau-\Delta+\sigma,0\},
+    \tau+\min\{\sigma,0\}
+    \right]
+  \end{equation*}
+
+  \begin{equation*}
+    \Pi=\tau G(\nu+\sigma+b-p_m^*)
+  \end{equation*}
+
+  \begin{block}{Intuition}
+    $M$ may not sell, but its own product caps $S$'s price. A lower $S$ price raises demand and commission income.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Innovation Constraint}
+  \small
+  Define $\bar{\tau}$ by:
+
+  \begin{equation*}
+    (\bar{\Delta}-\sigma-\bar{\tau})G(\nu+b+\sigma)-K(\bar{\Delta})=0
+  \end{equation*}
+
+  Lemma 1:
+
+  \begin{itemize}
+    \item If $\tau\leq\bar{\tau}$, then $S$ chooses high innovation: $\Delta=\bar{\Delta}$.
+    \item If $\tau>\bar{\tau}$, then $S$ chooses low innovation: $\Delta=\Delta^l$.
+  \end{itemize}
+
+  \begin{alertblock}{Intuition}
+    A high commission lowers $S$'s margin. If the margin is too low, innovation is not worth the cost.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dual Mode Equilibrium}
+  \small
+  Proposition 3: $M$ balances two limits.
+
+  \begin{itemize}
+    \item Showrooming constraint: $\tau\leq b$.
+    \item Innovation constraint: $\tau\leq\bar{\tau}$.
+  \end{itemize}
+
+  If high innovation is profitable enough:
+
+  \begin{equation*}
+    \tau^{dual}=\min\{b,\bar{\tau}\}, \qquad \Delta^{dual}=\bar{\Delta}
+  \end{equation*}
+
+  Otherwise:
+
+  \begin{equation*}
+    \tau^{dual}=b, \qquad \Delta^{dual}=\Delta^l
+  \end{equation*}
+
+  \begin{block}{Intuition}
+    The platform may charge less to keep $S$ willing to innovate, because innovation expands the market.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Which Mode Does the Platform Choose?}
+  \small
+  Corollary 1:
+
+  \begin{itemize}
+    \item $M$ prefers marketplace mode over seller mode iff $\sigma\leq 0$.
+    \item Dual mode is always better for $M$ than marketplace mode.
+    \item There is a threshold $\underline{\sigma}>0$ such that:
+  \end{itemize}
+
+  \begin{equation*}
+    \Pi^{dual}>\Pi^{sell}
+    \quad \text{iff} \quad
+    \sigma<\underline{\sigma}
+  \end{equation*}
+
+  \begin{alertblock}{Intuition}
+    Dual mode creates more transactions through price squeeze. But if $M$'s own product is much better, $M$ may prefer to sell alone.
+  \end{alertblock}
+\end{frame}

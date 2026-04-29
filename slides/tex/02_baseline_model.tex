@@ -1,0 +1,121 @@
+﻿\section{Baseline Model}
+
+\begin{frame}
+  \frametitle{Players}
+  \small
+  The model studies one product category.
+
+  \begin{itemize}
+    \item Platform $M$: can run a marketplace, sell its own product, or do both.
+    \item Innovative seller $S$: has a better product and can invest in quality.
+    \item Fringe sellers: sell a basic product and compete strongly.
+    \item Consumers: each buys at most one unit or takes an outside option.
+  \end{itemize}
+
+  \begin{block}{Intuition}
+    The platform is important because consumers use it to find products and to trade more easily.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Values and Parameters}
+  \small
+  Product values are:
+
+  \begin{center}
+    \begin{tabular}{lll}
+      \toprule
+      Product & Consumer value & Meaning \\
+      \midrule
+      Fringe sellers & $\nu$ & Basic product \\
+      Innovative seller $S$ & $\nu+\Delta$ & Better product \\
+      Platform $M$ & $\nu+\sigma$ & Platform's own product \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \begin{itemize}
+    \item $b>0$: convenience benefit from buying through the platform.
+    \item $\nu_o \sim G$: outside option.
+    \item $\tau$: platform commission.
+  \end{itemize}
+
+  \begin{block}{Intuition}
+    $\sigma>0$ means the platform is a better seller than fringe sellers; $\sigma<0$ means the opposite.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Innovation by Seller $S$}
+  \small
+  Seller $S$ chooses innovation $\Delta \geq \Delta^l$ and pays fixed cost $K(\Delta)$.
+
+  \begin{equation*}
+    K'(\bar{\Delta}) = G(\nu+\sigma+b)
+  \end{equation*}
+
+  \begin{block}{Meaning of $\bar{\Delta}$}
+    $\bar{\Delta}$ is the high innovation level that can arise when the market gives strong rewards to innovation.
+  \end{block}
+
+  \begin{alertblock}{Intuition}
+    The left side is marginal cost of innovation. The right side is the demand gain from better quality.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Product Discovery}
+  \small
+  Consumers do not know about $S$ at the start.
+
+  \begin{itemize}
+    \item Consumers know the fringe sellers.
+    \item Consumers may know the platform's own product.
+    \item Consumers discover $S$ only if $S$ is available on the platform.
+  \end{itemize}
+
+  \begin{block}{Why this matters}
+    The platform is not only a sales channel. It is also a discovery channel.
+  \end{block}
+
+  \begin{alertblock}{Intuition}
+    If a policy changes the platform's mode, it may also change whether consumers find $S$.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Three Platform Modes}
+  \small
+  \begin{center}
+    \begin{tabular}{lll}
+      \toprule
+      Mode & What $M$ does & Key feature \\
+      \midrule
+      Marketplace & Hosts third-party sellers & Earns commission $\tau$ \\
+      Seller & Sells its own product & No marketplace for $S$ \\
+      Dual & Hosts sellers and sells own product & Both roles at once \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \begin{block}{Intuition}
+    The policy debate is about whether the third mode should be allowed.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Timing}
+  \small
+  The game is solved by backward induction.
+
+  \begin{enumerate}
+    \item $M$ chooses its mode and sets commission $\tau$ if there is a marketplace.
+    \item $S$ decides whether to join the platform and chooses $\Delta$.
+    \item Sellers set prices.
+    \item Consumers choose what to buy.
+  \end{enumerate}
+
+  \begin{block}{Equilibrium concept}
+    Subgame Perfect Nash Equilibrium.
+  \end{block}
+\end{frame}
