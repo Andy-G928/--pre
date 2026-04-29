@@ -1,20 +1,49 @@
 ﻿\section{Baseline Model}
 
 \begin{frame}
-  \frametitle{Players}
-  \small
-  The model studies one product category.
+  \frametitle{Players I: Consumers and Competitive Benchmark}
+  \footnotesize
 
-  \begin{itemize}
-    \item Platform $M$: can run a marketplace, sell its own product, or do both.
-    \item Innovative seller $S$: has a better product and can invest in quality.
-    \item Fringe sellers: sell a basic product and compete strongly.
-    \item Consumers: each buys at most one unit or takes an outside option.
-  \end{itemize}
-
-  \begin{block}{Intuition}
-    The platform is important because consumers use it to find products and to trade more easily.
+  \begin{block}{Consumers}
+    \begin{itemize}
+      % \item Unit demand: each consumer buys at most one product.
+      \item Outside option of not buying anything (e.g., postpone purchase or buy another product): $\nu_o \sim G$.\footnote{$G$ is log-concave and continuously differentiable on $[0,\bar{\nu}_o]$, with density $g$.}
+      \item Platform transaction benefit: $b>0$ (finding products, one-click payment, delivery tracking, easy returns).
+      \item Choice rule: buy the option with the highest net utility.
+    \end{itemize}
   \end{block}
+
+  \begin{block}{Fringe sellers}
+    \begin{itemize}
+      \item At least two identical sellers.
+      \item Sell a basic product with value $\nu$.
+      \item Consumers already know them and can buy directly.
+      \item Bertrand competition gives the price benchmark.\footnote{All marginal costs are normalized to zero.}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Players II: Platform and Innovative Seller}
+  \small
+
+  \begin{block}{Innovative (superior) seller $S$}
+    \begin{itemize}
+      \item Benefits from innovation; discovered only if listed on $M$.
+      \item Better product value: $\nu+\Delta>\nu>0$.
+      \item Innovation: chooses quality investment $\Delta$.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Platform $M$}
+    \begin{itemize}
+      \item Chooses marketplace, seller, or dual mode.
+      \item Seller: sells its own offering, valued at $\nu+\sigma$.
+      \item Marketplace: sets commission $\tau \geq 0$ for third-party sellers.
+    \end{itemize}
+  \end{block}
+
+  
 \end{frame}
 
 \begin{frame}
