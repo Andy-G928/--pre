@@ -44,7 +44,17 @@
 2. Self-preferring：平台通过搜索排序、推荐、Buy Box 或默认展示规则，把消费者导向自营产品。
 3. Entry deterrence 或 innovation distortion：第三方卖家预期会被模仿或被压制，因此减少创新投入。
 
-### 1.4 文章的研究问题
+### 1.4 dual mode 的潜在好处
+
+这一页不要只讲 dual mode 的坏处，也要说明为什么文章没有直接接受“一刀切禁止”的直觉。Dual mode 至少可能带来三类效率收益：
+
+1. One-stop shopping：消费者可以在同一平台上比较第三方卖家和平台自营产品，节省搜索和交易成本。
+2. Efficient supply：不同产品或品类可能由不同主体更有效率地供给；在一些品类中，平台自营产品可能因为物流、规模、信誉或系统整合而更有价值。
+3. Price pressure：在基准模型中，平台自营产品不一定只是排挤第三方卖家，也可能对第三方卖家的平台内价格形成竞争约束，即后文的 price squeeze 机制，从而降低价格、扩大交易量并提高消费者剩余。
+
+因此，这里的核心过渡句可以是：dual mode 本身有两面性；真正需要区分的是“平台同时做 marketplace 和 seller”这一结构，还是 imitation、self-preferring 等具体行为造成了福利损失。
+
+### 1.5 文章的研究问题
 
 建议在 slides 上明确写出三个问题：
 
@@ -52,7 +62,7 @@
 2. 禁令实施后，平台会内生选择 seller mode 还是 marketplace mode？
 3. 相比直接禁止 dual mode，针对 product imitation 和 self-preferring 的行为监管是否更有效？
 
-### 1.5 文章贡献
+### 1.6 文章贡献
 
 可以概括为四点：
 
@@ -61,7 +71,7 @@
 - 证明禁止 dual mode 可能降低消费者剩余和社会福利，尤其在平台自营效率较高时。
 - 说明针对 imitation 和 self-preferring 的 behavioral remedies 通常比 structural ban 更好。
 
-### 1.6 汇报路线
+### 1.7 汇报路线
 
 建议第一位最后给出五人分工路线：
 
