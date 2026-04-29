@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{longtable}
 \usepackage{multicol}
 \usepackage{multirow}
@@ -69,27 +70,37 @@
 
 \setbeamertemplate{section page}{
   \begin{tikzpicture}[remember picture,overlay]
-    \fill[lingnangrey!30!white]
-      ([yshift=-1.25cm]current page.north west)
+    \fill[white] (current page.south west) rectangle (current page.north east);
+    \fill[lingnangrey!20!white]
+      ([xshift=0.0cm,yshift=-0.70cm]current page.north west)
       rectangle
-      ([yshift=-4.65cm]current page.north east);
+      ([xshift=\paperwidth,yshift=-0.92cm]current page.north west);
     \fill[darkred!80!black]
-      ([yshift=0.52cm]current page.south west)
+      ([xshift=0.0cm,yshift=-0.70cm]current page.north west)
       rectangle
-      (current page.south east);
+      ([xshift=0.30\paperwidth,yshift=-0.92cm]current page.north west);
     \fill[darkred!80!black]
-      ([xshift=0.86cm,yshift=-1.25cm]current page.north west)
+      ([xshift=1.10cm,yshift=1.05cm]current page.south west)
       rectangle
-      ([xshift=1.04cm,yshift=-4.65cm]current page.north west);
+      ([xshift=11.80cm,yshift=1.12cm]current page.south west);
     \node[anchor=west,inner sep=0pt]
-      at ([xshift=1.35cm,yshift=-2.05cm]current page.north west)
-      {\color{darkred!80!black}\Large\bfseries Part \thesection};
+      at ([xshift=1.10cm,yshift=-1.85cm]current page.north west)
+      {\color{lingnangrey!85!black}\sffamily\bfseries\fontsize{42}{42}\selectfont 0\thesection};
+    \node[anchor=west,inner sep=0pt]
+      at ([xshift=1.18cm,yshift=-2.58cm]current page.north west)
+      {\color{darkred!80!black}\sffamily\bfseries\large PART \thesection};
     \node[anchor=west,text width=0.78\paperwidth,align=left,inner sep=0pt]
-      at ([xshift=1.35cm,yshift=-3.25cm]current page.north west)
-      {\usebeamerfont{title}\color{black}\insertsectionhead};
+      at ([xshift=1.10cm,yshift=-4.00cm]current page.north west)
+      {\color{black}\sffamily\bfseries\fontsize{26}{31}\selectfont\insertsectionhead};
+    \node[anchor=west,text width=0.68\paperwidth,align=left,inner sep=0pt]
+      at ([xshift=1.10cm,yshift=1.52cm]current page.south west)
+      {\color{black!55}\sffamily\small Advanced Microeconomics Presentation};
     \node[anchor=west,inner sep=0pt]
-      at ([xshift=1.35cm,yshift=1.25cm]current page.south west)
-      {\color{white}\small Should Platforms Be Allowed to Sell on Their Own Marketplaces?};
+      at ([xshift=1.10cm,yshift=0.55cm]current page.south west)
+      {\color{black!70}\sffamily\footnotesize Should Platforms Be Allowed to Sell on Their Own Marketplaces?};
+    \node[anchor=east,inner sep=0pt]
+      at ([xshift=-1.05cm,yshift=0.55cm]current page.south east)
+      {\color{darkred!80!black}\sffamily\footnotesize Hagiu, Teh, and Wright (2022)};
   \end{tikzpicture}
 }
 
