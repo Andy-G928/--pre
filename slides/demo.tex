@@ -48,6 +48,7 @@
 \setbeamerfont{date}{size=\small}
 \setcounter{tocdepth}{1}
 \setbeamertemplate{caption}[numbered]
+\newcommand{\partspeaker}{}
 
 \title[Platform Dual Mode]{
   Should Platforms Be Allowed to Sell\\
@@ -55,7 +56,7 @@
 \subtitle{}
 \author[Group 1]{
   \textbf{Author:} Andrei Hagiu, Tat-How Teh, and Julian Wright
-  \texorpdfstring{\\\medskip {\small \textbf{Reporter:} Group 1}}{}
+  \texorpdfstring{\\\medskip {\small \textbf{Reporters:} Jinghao Mu, Jialong Zheng, Binghui Guo, Zhiyuan Chen, Zhuoyue Wu}}{}
 }
 \institute[Lingnan College, Sun Yat-Sen University]{Lingnan College, Sun Yat-Sen University}
 \date{}
@@ -92,6 +93,9 @@
     \node[anchor=west,text width=0.78\paperwidth,align=left,inner sep=0pt]
       at ([xshift=1.10cm,yshift=-4.00cm]current page.north west)
       {\color{black}\sffamily\bfseries\fontsize{26}{31}\selectfont\insertsectionhead};
+    \node[anchor=west,text width=0.78\paperwidth,align=left,inner sep=0pt]
+      at ([xshift=1.12cm,yshift=-5.05cm]current page.north west)
+      {\color{black!58}\sffamily\large Presenter: \partspeaker};
     \node[anchor=west,text width=0.68\paperwidth,align=left,inner sep=0pt]
       at ([xshift=1.10cm,yshift=1.52cm]current page.south west)
       {\color{black!55}\sffamily\small Advanced Microeconomics Presentation};
@@ -121,10 +125,15 @@
   \tableofcontents[hideallsubsections]
 \end{frame}
 
+\renewcommand{\partspeaker}{穆靖昊}
 \input{tex/01_research_question}
+\renewcommand{\partspeaker}{郑佳龙}
 \input{tex/02_baseline_model}
+\renewcommand{\partspeaker}{郭冰辉}
 \input{tex/03_equilibrium_analysis}
+\renewcommand{\partspeaker}{陈致远}
 \input{tex/04_ban_on_dual_mode}
+\renewcommand{\partspeaker}{吴卓越}
 \input{tex/05_policy_and_extensions}
 
 \end{document}

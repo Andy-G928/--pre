@@ -1,6 +1,7 @@
 /.vscode
 /AGENTS.md
 /CLAUDE.md
+demo.pdf
 
 # LaTeX build artifacts in slides
 /slides/*.aux
