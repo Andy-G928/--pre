@@ -74,7 +74,7 @@ The product category has at least two identical "fringe sellers," and their prod
 
 Consumers always have an outside option of not buying anything, which gives them a surplus of $\nu_{o}$ . We assume that $\nu_{o}$ is distributed according to a log-concave and continuously differentiable cumulative distribution function $G$ on the support $[0, \bar{\nu}_{o}]$ , where $\bar{\nu}_{o} \leq \infty$ , so we allow distributions with bounded and unbounded support. Denote the corresponding density function as $g$ , so that the log-concavity assumption implies $\frac{d}{dx} \frac{G(x)}{g(x)} \geq 0$ . All marginal costs are normalized to zero.
 
-□ Innovation. $S$ can choose the level of its innovation $\Delta \geq \Delta^l$ by incurring a fixed cost $K(\Delta)$ , where $\Delta^l > 0$ is the default innovation level of $S$ 's product. The cost function $K(.)$ is increasing and convex, and its derivative is denoted as $K'(.)$ . We assume $K(\Delta^l) = 0$ and $K'(\Delta^l) \leq G(v)$ (which is a more general version of the usual boundary condition that $K'(\Delta^l) = 0$ ). Denote $\bar{\Delta} > \Delta^l$ as the solution to the following first-order condition:
+ Innovation. $S$ can choose the level of its innovation $\Delta \geq \Delta^l$ by incurring a fixed cost $K(\Delta)$ , where $\Delta^l > 0$ is the default innovation level of $S$ 's product. The cost function $K(.)$ is increasing and convex, and its derivative is denoted as $K'(.)$ . We assume $K(\Delta^l) = 0$ and $K'(\Delta^l) \leq G(v)$ (which is a more general version of the usual boundary condition that $K'(\Delta^l) = 0$ ). Denote $\bar{\Delta} > \Delta^l$ as the solution to the following first-order condition:
 
 $$
 K ^ {\prime} (\bar {\Delta}) = G (v + \sigma + b). \tag {1}
@@ -84,13 +84,13 @@ Throughout the article, $\bar{\Delta}$ is the highest possible innovation level 
 
 Product discovery on the marketplace. All consumers are initially aware of all the offerings in the market except $S$ 's product. Consumers can discover $S$ through $M$ , provided that $S$ is available on $M$ 's marketplace. In practice, many consumers rely on marketplaces like Amazon and Apple's App Store to find out about the existence of new products. In the baseline version of the model, we assume that $M$ does not engage in self-preferring, so that all consumers become aware of $S$ 's existence as long as $S$ participates on the marketplace. Once a consumer becomes aware of $S$ 's existence through $M$ , she also becomes aware of $S$ 's direct channel and its associated price. She is free to choose which channel to buy $S$ 's product from (and still enjoy transaction benefit $b$ if she buys it through $M$ 's marketplace).
 
-□ Platform commission. Whenever $M$ 's mode includes a marketplace, it charges a commission $\tau \geq 0$ to third-party sellers for each transaction facilitated.<sup>9</sup> Third-party sellers (including $S$ ) can choose whether to participate on $M$ 's marketplace, and whenever they do, can price discriminate between consumers that come to it through the marketplace and consumers that come to it through the direct channel. We posit that third-party sellers participate on $M$ 's marketplace whenever they are indifferent.
+Platform commission. Whenever $M$ 's mode includes a marketplace, it charges a commission $\tau \geq 0$ to third-party sellers for each transaction facilitated. Third-party sellers (including $S$ ) can choose whether to participate on $M$ 's marketplace, and whenever they do, can price discriminate between consumers that come to it through the marketplace and consumers that come to it through the direct channel. We posit that third-party sellers participate on $M$ 's marketplace whenever they are indifferent.
 
 Given there are always two or more identical fringe sellers competing in the direct channel and on the marketplace, following the standard Bertrand logic, we take as given that fringe sellers always price at marginal cost, that is, zero if selling directly and $\tau$ if selling on a marketplace,
 
 regardless of how $S$ and $M$ price. Thus, when we characterize equilibria, we take these fringe seller prices as given. $^{10}$
 
-# □ Timing.
+#  Timing.
 
 1. $M$ chooses its mode of operation and sets $\tau$ (if in marketplace or dual mode);   
 2. $S$ chooses whether to participate on the platform (if applicable) and the level of its innovation $\Delta$ ;   
@@ -147,7 +147,7 @@ Assumption (2) implies that the competitive constraint binds, so $p_m^* = b + \s
 
 Proposition 2 (Seller mode equilibrium). $M$ sets $p_m^* = b + \sigma$ and sells to all consumers, whereas $S$ sells to no one.
 
-$\square$ Dual mode. Suppose $M$ chooses the dual mode, and consider the pricing subgame in stage 3. Let us focus on $\tau \in (\max \{-\sigma, 0\}, b]$ , which turns out to be part of the overall equilibrium when $M$ sets $\tau$ . Then, there are two possible equilibria in the pricing subgame:
+Dual mode. Suppose $M$ chooses the dual mode, and consider the pricing subgame in stage 3. Let us focus on $\tau \in (\max \{-\sigma, 0\}, b]$ , which turns out to be part of the overall equilibrium when $M$ sets $\tau$ . Then, there are two possible equilibria in the pricing subgame:
 
 - (Semi-seller mode equilibrium) If $\sigma \geq \Delta$ , all consumers buy from $M$ . The equilibrium prices are $p_i^* = \tau$ , $p_o^* \geq p_i^* - b$ , and $p_m^* = \tau + \sigma - \Delta$ .
 
@@ -216,7 +216,7 @@ Choice of mode. We are now ready to compare $M$ 's profits across all three mode
 Corollary 1 (Platform profit).
 
 - $\Pi^{mkt} \geq \Pi^{sell}$ if and only if $\sigma \leq 0$ , with equality holding only when $\sigma = 0$ ;   
-$\Pi^{dual} > \Pi^{pkt}$   
+$\Pi^{dual} > \Pi^{mkt}$   
 - There exists a unique threshold $\underline{\sigma} > 0$ such that $\Pi^{dual} > \Pi^{sell}$ if and only if $\sigma < \underline{\sigma}$ .
 
 Comparing the two pure modes, $M$ prefers the marketplace mode if $\sigma < 0$ and the seller mode if $\sigma > 0$ . In the marketplace mode, $M$ hosts $S$ 's innovative product, which allows $M$ 's channel (as a whole) to compete more favorably against fringe sellers in their direct channel. However, $M$ can only partially extract the resulting sales revenue through its commission due to the existence of the showrooming constraint. In contrast, in the seller mode, $M$ fully extracts any sales revenue from its channel, but $M$ 's inferior product means the competition with fringe sellers is less favorable than in the marketplace mode when $\sigma \leq 0$ .
@@ -225,7 +225,7 @@ Following the price squeeze logic in the dual mode, $\Pi^{dual} > \Pi^{mkt}$ bec
 
 Finally, the comparison between $\Pi^{dual}$ and $\Pi^{sell}$ (when $\sigma > 0$ ) reflects two opposing forces when $M$ opens up its channel for $S$ to make sales in dual mode. First, by having $S$ 's superior product on the marketplace and squeezing $S$ 's price, $M$ can generate more transactions. Second, given that $M$ does not steer in this baseline setup, by choosing dual mode, $M$ essentially commits to let all consumers become aware of $S$ 's product. This means that $M$ can no longer fully exploit its own competitive advantage $\sigma$ due to competition with $S$ . The dual mode is less profitable than the seller mode if $\sigma$ is sufficiently large. This is consistent with the result in Hagiu, Jullien, and Wright (2020), in which a platform only wants to host a rival when the rival's product is sufficiently superior to its own.
 
-□ Banning dual mode in the baseline model. A policy that bans the dual mode for a given product category can result in two possible market structures, depending on whether $M$ chooses to operate in the marketplace mode or the seller mode in period zero for that category (Corollary 1). We examine the implications on profits ( $\Pi$ and $\pi$ ), consumer surplus ( $CS$ ), innovation ( $\Delta$ ), and welfare ( $W$ ).
+ Banning dual mode in the baseline model. A policy that bans the dual mode for a given product category can result in two possible market structures, depending on whether $M$ chooses to operate in the marketplace mode or the seller mode in period zero for that category (Corollary 1). We examine the implications on profits ( $\Pi$ and $\pi$ ), consumer surplus ( $CS$ ), innovation ( $\Delta$ ), and welfare ( $W$ ).
 
 Proposition 4. Banning the dual mode in the baseline model has the following effects:
 
@@ -264,12 +264,13 @@ It is worth emphasizing that for large platforms like Amazon and Apple, the case
 
 In this section we explore the two practices that certain platforms that operate in dual mode (such as Amazon and Apple) have been alleged to use, and that have drawn scrutiny by policymakers: imitation of third-party products and self-preferring (steering consumers to the products sold by the platform). We enrich the baseline model by introducing both of these practices below.
 
-Product imitation. Whenever $S$ is available on the platform and $M$ operates in dual mode, $M$ (before setting its price) can choose to imitate $S$ 's superior product, thereby also offering consumers a product with the same surplus as $S$ 's product, that is, $\nu + \Delta$ . Note $M$ could still choose to offer its original product as well, which it would do if and only if $\sigma \geq \Delta$ . Thus, here we focus on the strongest form of imitation in dual mode—it occurs immediately and works perfectly. If instead $S$ does not participate, then $M$ cannot imitate $S$ 's product. This captures the policy concern that by hosting third-party sellers, $M$ obtains some kind of proprietary data from them which allows it to copy the relevant product features from that seller. Implicit in this timing assumption is that $M$ cannot commit to not imitate $S$ 's product. To simplify the exposition, we will assume that $M$ breaks ties in favor of not imitating whenever it is indifferent, reflecting that imitation may be costly.   
-□ Steering. To model the possibility of $M$ engaging in self-preferring, we assume that all consumers rely on $M$ 's recommendation to discover $S$ 's novel product, so that $M$ can steer consumers by determining whether or not they are aware of $S$ 's existence (e.g., through its recommendation algorithm). In other words, unlike in the baseline model, $S$ 's participation on $M$ in the marketplace and dual modes is no longer sufficient for consumers to learn about its existence.
+**Product imitation.** Whenever $S$ is available on the platform and $M$ operates in dual mode, $M$ (before setting its price) can choose to imitate $S$ 's superior product, thereby also offering consumers a product with the same surplus as $S$ 's product, that is, $\nu + \Delta$ . Note $M$ could still choose to offer its original product as well, which it would do if and only if $\sigma \geq \Delta$ . Thus, here we focus on the strongest form of imitation in dual mode—it occurs immediately and works perfectly. If instead $S$ does not participate, then $M$ cannot imitate $S$ 's product. This captures the policy concern that by hosting third-party sellers, $M$ obtains some kind of proprietary data from them which allows it to copy the relevant product features from that seller. Implicit in this timing assumption is that $M$ cannot commit to not imitate $S$ 's product. To simplify the exposition, we will assume that $M$ breaks ties in favor of not imitating whenever it is indifferent, reflecting that imitation may be costly.   
+
+**Steering.** To model the possibility of $M$ engaging in self-preferring, we assume that all consumers rely on $M$ 's recommendation to discover $S$ 's novel product, so that $M$ can steer consumers by determining whether or not they are aware of $S$ 's existence (e.g., through its recommendation algorithm). In other words, unlike in the baseline model, $S$ 's participation on $M$ in the marketplace and dual modes is no longer sufficient for consumers to learn about its existence.
 
 Specifically, after all prices are set, $M$ makes a binary choice of whether to show $S$ 's product to consumers or not. Consumers remain aware of all other products, including any product that $M$ is selling.
 
-□ Timing. The timing of this enriched model is exactly the same as in the baseline model, except the details in Stages 2 and 4 are modified as follows to handle the possibility of imitation and steering:
+ Timing. The timing of this enriched model is exactly the same as in the baseline model, except the details in Stages 2 and 4 are modified as follows to handle the possibility of imitation and steering:
 
 - Stage 2: (a) $S$ chooses whether or not to participate on the platform (if applicable) and the level of its innovation $\Delta$ ; (b) if $M$ is operating in dual mode and $S$ participates, $M$ chooses whether or not to imitate $S$ 's product.   
 - Stage 4: (a) $M$ chooses whether or not to show $S$ (if $S$ participates on the platform); (b) after observing the existence of $S$ if $M$ shows it, all consumers make their purchase decisions.
@@ -294,8 +295,9 @@ The optimal recommendation rule is straightforward when exactly one of the condi
 
 In the Appendix, we show that this recommendation rule implies that the equilibrium outcome in marketplace mode is exactly the same as in the baseline model, that is, Proposition 1 applies.
 
-Seller mode. Neither of the new modelling ingredients (imitation and steering) has any effect on the seller mode, so the equilibrium in Proposition 2 applies.   
-Dual mode with product imitation and self-preferring. To keep the exposition concise, in what follows we focus on presenting the main qualitative features of the analysis and we relegate more formal details to the Appendix. Given the possibility of product imitation, we assume
+**Seller mode.** Neither of the new modelling ingredients (imitation and steering) has any effect on the seller mode, so the equilibrium in Proposition 2 applies.   
+
+**Dual mode with product imitation and self-preferring.** To keep the exposition concise, in what follows we focus on presenting the main qualitative features of the analysis and we relegate more formal details to the Appendix. Given the possibility of product imitation, we assume
 
 $$
 b + \bar {\Delta} <   \frac {G (v)}{g (v)}. \tag {12}
@@ -371,7 +373,7 @@ The results in Proposition 6 contain two major differences relative to Propositi
 
 Second, in the empirically less likely case that $M$ actually has a disadvantage in selling compared to fringe sellers (i.e., $\sigma \leq 0$ ), banning the dual mode does not affect consumer surplus (as opposed to decreasing it in the baseline setup) and always increases innovation and welfare (as opposed to being ambiguous). Indeed, we know that $M$ 's ability to perfectly steer consumers means that the final price is the same in the marketplace mode and in the dual mode, explaining why consumer surplus does not change. At the same time, the possibility of imitation by $M$ (on and off the equilibrium path) in dual mode eliminates $S$ 's incentive to innovate so it always chooses $\Delta^l$ in dual mode.
 
-□ Behavioral remedies. Instead of banning the dual mode, an alternative approach is to impose behavioral remedies such as: (i) banning self-preferring, (ii) banning imitation, or (iii) banning both self-preferring and imitation. We consider the implications of each of these remedies.   
+ Behavioral remedies. Instead of banning the dual mode, an alternative approach is to impose behavioral remedies such as: (i) banning self-preferring, (ii) banning imitation, or (iii) banning both self-preferring and imitation. We consider the implications of each of these remedies.   
 - Ban on self-preferring only. A ban on self-preferring requires $M$ to always show $S$ 's product when $S$ is listed on its marketplace, so that all consumers are fully aware of all offers available in the market whenever $S$ participates. There are several direct implications for the dual mode: (i) The exploitative equilibrium no longer exists because $M$ can no longer avoid competing with $S$ ; (ii) the showrooming constraint on $\tau$ is restored. However, product imitation is still allowed. In the proof of the next proposition, we show that the post-intervention equilibrium of the dual mode is characterized by:   
 - $M$ sets $\tau = b$ , $S$ participates and sets $\Delta = \Delta^l$ , and $M$ imitates. $S$ sells to all consumers through the marketplace at $p_i^* = b$ . Profits are $\Pi = bG(\nu + \Delta^l)$ and $\pi = 0$ .<sup>16</sup>
 
