@@ -2,6 +2,7 @@
 /AGENTS.md
 /CLAUDE.md
 demo.pdf
+/.claude 
 
 # LaTeX build artifacts in slides
 /slides/*.aux
