@@ -127,12 +127,12 @@
 
   \begin{block}{Recommendation rule}
     \begin{itemize}
-      \item Show $S$ if Eq. \eqref{eq:show-s-marketplace} holds: $S$ creates a marketplace sale, so $M$ earns commission $\tau$ with show $S$.
-      \item Hide $S$ if Eq. \eqref{eq:show-s-marketplace} fails but Eq. \eqref{eq:hide-s-fringe} holds: hiding $S$ redirects consumers to fringe sellers, so $M$ still earns commission $\tau$.
+      \item Show $S$ if Eq. \eqref{eq:show-s-marketplace}, holds: $M$ earns commission $\tau$.
+      \item Hide $S$ if Eq. \eqref{eq:show-s-marketplace}, fails but Eq. \eqref{eq:hide-s-fringe}, holds.
     \end{itemize}
   \end{block}
 
-  Seller mode: $M$ sells only its own product; no marketplace listing for $S$ (unchanged vs baseline).
+  Seller mode is unchanged: $M$ sells only its own product.
 \end{frame}
 
 
@@ -173,12 +173,12 @@
     \item $M$ choose to hide $S$
     \begin{itemize}
       \item $M$'s expected margin $>$ expected commission from $S$;
-      \item Or consumers prefer $M$ to fringe sellers (Eq. \eqref{eq:show-s-marketplace} fails).
+      \item Or the marketplace-purchase condition for $S$, Eq. \eqref{eq:show-s-marketplace}, fails.
     \end{itemize}
     \item $M$ choose to show $S$ 
     \begin{itemize}
       \item $M$'s expected margin $<$ expected commission from $S$;
-      \item and consumers prefer $S$ to fringe sellers (Eq. \eqref{eq:show-s-marketplace} holds).
+      \item and the marketplace-purchase condition for $S$, Eq. \eqref{eq:show-s-marketplace}, holds.
     \end{itemize}
   \end{itemize}
   \end{block}
@@ -189,26 +189,47 @@
 \subsection{}
 \begin{frame}
   \frametitle{Pricing Without Imitation}
-  \small
-  If $M$ does not imitate, steering creates an exploitative equilibrium.
+  \footnotesize
+  Without imitation, the subgame can be exploitative or price-squeezing.
+  \begin{enumerate}
+    \item \textbf{Exploitative}: $M$ hides $S$, and charges the highest price allowed by outside options.
+    \item \textbf{Price squeeze}: $M$ shows $S$, but caps $S$'s inside price and margin.
+  \end{enumerate}
 
   \begin{block}{Exploitative equilibrium}
-    $M$ does not show $S$ and sells to all consumers:
-    \begin{equation}
-      p_m^*=\min\{\tau,b\}+\sigma .
-    \end{equation}
+
+    \begin{itemize}
+      \item \textbf{Exploitative price}: 
+      \begin{equation}
+        p_m^*=\min\{\tau,b\}+\sigma
+        \label{eq:pm-wo-imitation}
+      \end{equation}
+      \begin{itemize}
+        \item $M$ vs fringe through marketplace: $\nu + \sigma + b - p_m^* > \nu + b - \tau$ $\Longrightarrow$ $p_m^* < \tau + \sigma$
+        \item $M$ vs fringe not through marketplace: $\nu + \sigma + b - p_m^* > \nu $ $\Longrightarrow$ $p_m^* < b + \sigma$
+      \end{itemize}
+      \item \textbf{Exploitative profit}: using the seller-mode profit function, Eq. \eqref{eq:seller-profit}, and Eq. \eqref{eq:pm-wo-imitation}:
+      \begin{equation}
+        \Pi_{no-imi}^{exploit}=(\min\{\tau,b\}+\sigma)G(\nu+b-\min\{\tau,b\}).
+      \end{equation}
+    \end{itemize}
   \end{block}
 
-  \begin{equation}
-    \Pi^{\text{exploit}}_{no-imi}
-    =
-    \bigl(\min\{\tau,b\}+\sigma\bigr)
-    G\bigl(\nu+b-\min\{\tau,b\}\bigr).
-  \end{equation}
+  
+\end{frame}
 
-  \begin{alertblock}{Intuition}
-    Steering lets $M$ avoid direct price competition with the innovative seller.
-  \end{alertblock}
+\begin{frame}
+  \frametitle{Pricing Without Imitation: Price Squeeze}
+  \footnotesize
+
+  Without imitation, products and quality gaps are the same as in the baseline.
+  The only new instrument is steering:
+  \begin{itemize}
+    \item If $S$ is shown, pricing follows the baseline price-squeeze logic.
+    \item Self-preferencing adds one more constraint: $M$ must prefer showing $S$ to hiding it.
+  \end{itemize}
+
+
 \end{frame}
 
 \begin{frame}

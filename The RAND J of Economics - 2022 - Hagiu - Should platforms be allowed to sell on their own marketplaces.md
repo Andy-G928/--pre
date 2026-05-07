@@ -305,22 +305,22 @@ $$
 
 This serves the same purpose as (2) did in the baseline, that is, it ensures that the competitive constraints are always binding on equilibrium prices.
 
-Recommendation. Given that $M$ is selling (either its own product or its imitation of $S$ 's product), its recommendation decision is determined by comparing its own margin with the commission, after adjusting for the probabilities of consumers purchasing each of the products (given that consumers have heterogenous outside options). In stage 4, $M$ optimally chooses not to show $S$ if at least one of the following conditions holds:
+*Recommendation.* Given that $M$ is selling (either its own product or its imitation of $S$ 's product), its recommendation decision is determined by comparing its own margin with the commission, after adjusting for the probabilities of consumers purchasing each of the products (given that consumers have heterogenous outside options). In stage 4, $M$ optimally chooses not to show $S$ if at least one of the following conditions holds:
 
 - $M$ 's expected margin from selling (whether its own product or its imitation of $S$ 's product) is higher than the expected commission it could collect from $S$ and consumers prefer to buy $M$ 's offering over buying from the fringe sellers (either directly or on $M$ ).   
 - Consumers do not buy from $S$ through the marketplace when $S$ is shown, that is, $\Delta + b - p_i < \max \{ \Delta - p_o, b - \tau, 0 \}$ .
 
 If neither of these conditions holds, then $M$ 's expected margin is lower than the expected commission, and showing $S$ results in transactions on the marketplace. In this case, $M$ will show $S$ 's product to consumers.
 
-Pricing subgame without imitation. For the stage-3 pricing subgame, we first consider the case where $M$ has chosen not to imitate $S$ 's product. This allows us to understand how $M$ 's ability to steer affects the pricing subgame relative to the baseline dual mode in Section 3. Broadly speaking, there are two types of relevant equilibria in the subgame, depending on the value of $\tau$ (the complete equilibrium strategies are stated in the proof of Proposition 5).
+*Pricing subgame without imitation.* For the stage-3 pricing subgame, we first consider the case where $M$ has chosen not to imitate $S$ 's product. This allows us to understand how $M$ 's ability to steer affects the pricing subgame relative to the baseline dual mode in Section 3. Broadly speaking, there are two types of relevant equilibria in the subgame, depending on the value of $\tau$ (the complete equilibrium strategies are stated in the proof of Proposition 5).
 
-- Exploitative equilibrium (without imitation). This parallels the semi-seller mode equilibrium in the baseline dual mode. The key difference is that $M$ can choose not to show $S$ 's product in order to shield $M$ 's own offering from competing with $S$ . This allows $M$ to fully extract the value of its original product $\sigma$ , as well as $\min\{b, \tau\}$ (due to competition with fringe suppliers). Thus, $M$ can set the "exploitative price" $p_m^* = \min\{\tau, b\} + \sigma$ and sell to all consumers, earning
+- *Exploitative equilibrium (without imitation).* This parallels the semi-seller mode equilibrium in the baseline dual mode. The key difference is that $M$ can choose not to show $S$ 's product in order to shield $M$ 's own offering from competing with $S$ . This allows $M$ to fully extract the value of its original product $\sigma$ , as well as $\min\{b, \tau\}$ (due to competition with fringe suppliers). Thus, $M$ can set the "exploitative price" $p_m^* = \min\{\tau, b\} + \sigma$ and sell to all consumers, earning
 
 $$
 \Pi_ {n o - i m i} ^ {\text {e x p l o i t}} \equiv (\min  \{\tau , b \} + \sigma) G (\nu + b - \min  \{\tau , b \}). \tag {13}
 $$
 
-- Price squeeze equilibrium (without imitation). The equilibrium construction for this case is similar to the baseline model, with $M$ earning (6). However, here $S$ may still sell through the marketplace in the price squeeze equilibrium even when $\tau > b$ . This is because steering implies that $S$ faces the threat of not being shown whenever it attempts to attract consumers to the direct channel.
+-* Price squeeze equilibrium (without imitation).* The equilibrium construction for this case is similar to the baseline model, with $M$ earning (6). However, here $S$ may still sell through the marketplace in the price squeeze equilibrium even when $\tau > b$ . This is because steering implies that $S$ faces the threat of not being shown whenever it attempts to attract consumers to the direct channel.
 
 Pricing subgame with imitation. Clearly, $M$ has no incentive to imitate if $\sigma \geq \Delta$ . So this pricing subgame is relevant only if $\Delta > \sigma$ . In this case, after imitation, $M$ 's product has the same value as $S$ 's. Relative to the exploitative equilibrium without imitation, $M$ can now set a higher exploitative price $p_{m}^{*} = \min \{\tau, b\} + \Delta$ and sell to all consumers, earning
 
