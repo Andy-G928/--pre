@@ -231,13 +231,13 @@ cd slides
 然后运行：
 
 ```powershell
-xelatex "demo.tex"
+xelatex -synctex=1 "demo.tex"
 ```
 
 如果目录、页码或交叉引用没有更新，再运行一次：
 
 ```powershell
-xelatex "demo.tex"
+xelatex -synctex=1 "demo.tex"
 ```
 
 编译成功后会生成：
@@ -381,7 +381,7 @@ git status
 
 ```powershell
 cd slides
-xelatex "demo.tex"
+xelatex -synctex=1 "demo.tex"
 ```
 
 ### 我不懂 LaTeX 怎么办？

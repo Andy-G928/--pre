@@ -357,11 +357,9 @@ There are two ways in which $M$ can achieve this profit. First, $M$ can set $\ta
 
 The existence of the two outcome-equivalent equilibria when $\Delta^l > \sigma$ is a consequence of the assumption that $M$ 's imitation product has the same value as $S$ 's product. In Section 5, we discuss an extension of our model in which $M$ 's imitation product is either imperfect (offers a value below $S$ 's) or value-adding (offers a value above $S$ 's). If imitation is imperfect, $M$ strictly prefers the first approach of inducing the price squeeze equilibrium without imitation. If imitation is value-adding, $M$ strictly prefers the second approach of inducing the exploitative equilibrium (with imitation). Our focus on perfect imitation is thus a limit case that lies between these two alternatives. Despite the discrete switch in $M$ 's equilibrium strategy when we go from one alternative to the other, we note that due to the equivalence result under perfect imitation, the market outcome (profits, consumer surplus, and welfare) is continuous across the cases of imperfect imitation and value-adding imitation.
 
-In sum, Proposition 5 highlights two potential downsides of the dual mode when perfect self-preferring and perfect imitation are possible: (i) the lack of on-platform competition, and
+In sum, Proposition 5 highlights two potential downsides of the dual mode when perfect self-preferring and perfect imitation are possible: (i) the lack of on-platform competition, and (ii) the elimination of $S$ 's innovation incentive. In the next section, we consider two distinct policy approaches to address these potential downsides.
 
-(ii) the elimination of $S$ 's innovation incentive. In the next section, we consider two distinct policy approaches to address these potential downsides.
-
-Banning dual mode with self-preferring and imitation. Consider first the structural approach of banning the dual mode.
+**Banning dual mode with self-preferring and imitation.** Consider first the structural approach of banning the dual mode.
 
 Proposition 6. Banning the dual mode (with self-preferring and imitation) has the following effects:
 

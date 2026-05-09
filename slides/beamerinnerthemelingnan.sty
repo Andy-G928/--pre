@@ -11,6 +11,53 @@
 \setbeamertemplate{blocks}[rounded]
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 
+% Compact vertical rhythm for math-heavy lecture slides.
+% Beamer's default display skips are roomy, especially inside itemize blocks.
+\newcommand{\lingnancompactspacing}{%
+  \setlength{\abovedisplayskip}{0.25em plus 0.10em minus 0.08em}%
+  \setlength{\belowdisplayskip}{-0.20em plus 0.08em minus 0.08em}%
+  \setlength{\abovedisplayshortskip}{0.15em plus 0.08em minus 0.05em}%
+  \setlength{\belowdisplayshortskip}{-0.10em plus 0.06em minus 0.05em}%
+}
+\g@addto@macro\normalsize{\lingnancompactspacing}
+\g@addto@macro\small{\lingnancompactspacing}
+\g@addto@macro\footnotesize{\lingnancompactspacing}
+\g@addto@macro\scriptsize{\lingnancompactspacing}
+\AtBeginDocument{\lingnancompactspacing}
+
+% Pull a nested list upward only when it follows a display equation.
+% Plain nested lists should keep their normal separation to avoid overlap.
+\newif\iflingnanafterdisplay
+\AfterEndEnvironment{equation}{\global\lingnanafterdisplaytrue}
+\AfterEndEnvironment{equation*}{\global\lingnanafterdisplaytrue}
+\AfterEndEnvironment{align}{\global\lingnanafterdisplaytrue}
+\AfterEndEnvironment{align*}{\global\lingnanafterdisplaytrue}
+\pretocmd{\itemize}{%
+  \ifnum\@itemdepth>0
+    \iflingnanafterdisplay\vspace{-1.05em}\fi
+  \fi
+  \global\lingnanafterdisplayfalse
+}{}{}
+\pretocmd{\enumerate}{%
+  \ifnum\@enumdepth>0
+    \iflingnanafterdisplay\vspace{-1.05em}\fi
+  \fi
+  \global\lingnanafterdisplayfalse
+}{}{}
+
+\addtobeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\topsep}{0.15em}%
+  \setlength{\partopsep}{0pt}%
+  \setlength{\itemsep}{0.18em}%
+  \setlength{\parsep}{0pt}%
+}{}
+\addtobeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\topsep}{-0.35em}%
+  \setlength{\partopsep}{0pt}%
+  \setlength{\itemsep}{0.10em}%
+  \setlength{\parsep}{0pt}%
+}{}
+
 % Overlay setting
 \setbeamercovered{dynamic}
 
