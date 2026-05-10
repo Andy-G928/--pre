@@ -202,13 +202,13 @@
       \item \textbf{Exploitative price}: 
       \begin{equation}
         p_m^*=\min\{\tau,b\}+\sigma
-        \label{eq:pm-wo-imitation}
+        \label{eq:pm*}
       \end{equation}
       \begin{itemize}
         \item $M$ vs fringe through marketplace: $\nu + \sigma + b - p_m^* > \nu + b - \tau$ $\Longrightarrow$ $p_m^* < \tau + \sigma$
         \item $M$ vs fringe not through marketplace: $\nu + \sigma + b - p_m^* > \nu $ $\Longrightarrow$ $p_m^* < b + \sigma$
       \end{itemize}
-      \item \textbf{Exploitative profit}: using the seller-mode profit function, Eq. \eqref{eq:seller-profit}, and Eq. \eqref{eq:pm-wo-imitation}:
+      \item \textbf{Exploitative profit}: using the seller-mode profit function, Eq. \eqref{eq:seller-profit}, and Eq. \eqref{eq:pm*}:
       \begin{equation}
         \begin{aligned}
           \Pi_{no-imi}^{exploit} &= p^*_m \times G(\nu+b+\sigma-p^*_m) \\
@@ -242,7 +242,7 @@
   \begin{block}{Exploitative equilibrium}
     \begin{equation}
       \begin{aligned}
-        p_m^*&=\min\{\tau,b\}+ \sigma \qquad (\text{imitation: }\sigma = \Delta) \\
+        p_m^*& =\min\{\tau,b\}+ \sigma \qquad (\text{imitation: }\sigma = \Delta) \\
         & = \min\{\tau,b\}+ \textcolor{red}{\Delta} .
       \end{aligned}
     \end{equation}
@@ -256,7 +256,7 @@
   \end{block}
 
   \begin{block}{Price-squeeze equilibrium}
-    \begin{equation}
+    \begin{equation}\label{eq:pi*}
       \begin{aligned}
         p_i^* &=p_m^* + \Delta - \sigma \qquad (\text{imitation: }\sigma = \Delta) \\
         & = \min\{\tau,b\} = \tau .
@@ -277,18 +277,18 @@
   \scriptsize
   \begin{block}{Assumptions in the regulated-practice environment}
     \begin{itemize}
-      \item \textbf{Imitation allow:} $M$ can perfectly imitate $S$'s innovation at no cost.
-      \item \textbf{Self-preferencing allow:} $M$ can perfectly steer consumers toward its own offer.
+      \item \textbf{Imitation allow:} $M$ can perfectly imitate $S$'s innovation at no cost, $\sigma = \max\{\Delta, \sigma\}$.
+      \item \textbf{Self-preferencing allow:} $M$ can perfectly steer consumers toward its own offer, $\tau = b + \Delta$.
       \item \textbf{Dual mode is feasible:} $M$ both sells its own product and hosts $S$.
     \end{itemize}
   \end{block}
 
   \begin{block}{Main variables in equilibrium}
     \begin{itemize}
-      \item $M$'s profit: $\Pi^{dual}= p^*_m G(\nu+b+\Delta^{dual}-p^*_m) = (b+\max\{\sigma,\Delta^l\})G(\nu).$
-      \item $S$'s operating profit: $\pi^{dual}=(p_i^*-\tau)G(\nu+b+\Delta^{dual}-p_i^*)=0$.
+      \item $M$'s profit: $\Pi^{dual}= \max\left\{p^*_m G(\nu+b+\Delta^{dual}-p^*_m), \tau^* G(\nu+b+\Delta^{dual}-p^*_i)\right\} = (b+\max\{\sigma,\Delta^l\})G(\nu).$
+      \item $S$'s operating profit: $\pi^{dual}= \max\left\{(p_i^*-\tau)G(\nu+b+\Delta^{dual}-p_i^*) - K(\Delta^{dual}), 0 \right\}=0$.
       \item Innovation level: $\Delta^{dual} = \Delta^l$ $\quad \leftarrow \quad$ $\Delta^{dual}= \arg\max_{\Delta^{dual} \geq \Delta^l} \pi^{dual} - K(\Delta)$.
-      \item Consumer surplus: $CS^{dual}=CS^0\equiv \int_0^\infty \max\{\nu,\nu_o\}\,dG(\nu_o)$.
+      \item Consumer surplus: $CS^{dual}=CS^0\equiv \int_0^\infty \max\{\nu,\nu_o\}\,dG(\nu_o)$ \equiv f(v).
       \item Total welfare: $W^{dual}=\Pi^{dual}+\pi^{dual}+CS^{dual}$
     \end{itemize}
   \end{block}
@@ -298,56 +298,53 @@
   \frametitle{Proposition 5: Outcome Vector}
   \scriptsize
  
-  \begin{center}
-    \textbf{Table: Dual-mode benchmark with imitation and self-preferencing}
-
-    \vspace{0.2em}
-    \setlength{\tabcolsep}{1.6pt}
-    \begin{tabular}{@{}p{0.14\linewidth}p{0.24\linewidth}p{0.17\linewidth}cccc@{}}
+  \begin{table}
+    \centering
+    \caption{Dual-mode benchmark with imitation and self-preferencing (Proposition 5)}
+    \label{tab:Proposition5}
+    \begin{tabular}{@{}lccccc@{}}
       \toprule
-      Case & $M$'s choice of mode & $\Pi$ & $\pi$ & $\Delta$ & $CS$ & $W$ \\
+      Case & $M$'s choice of mode & $\tau$ & $\Pi$ & $\pi$ & $\Delta$  \\
       \midrule
       $\sigma\geq\Delta^l$
         & Dual - no imitation, $M$ sells
+        & $\tau^* \geq b + \Delta^l$  
         & $(b+\sigma)G(\nu)$
         & $0$
-        & $\Delta^l$
-        & $CS^0$
-        & $\Pi+CS^0$ \\
+        & $\Delta^l$ \\
       $0<\sigma<\Delta^l$
         & Dual - high fee or imitation
+        & $\tau^* \geq b$
         & $(b+\Delta^l)G(\nu)$
         & $0$
-        & $\Delta^l$
-        & $CS^0$
-        & $\Pi+CS^0$ \\
+        & $\Delta^l$ \\
       $\sigma\leq0$
         & Dual - high fee or imitation
+        & $\tau^* \geq b$
         & $(b+\Delta^l)G(\nu)$
         & $0$
-        & $\Delta^l$
-        & $CS^0$
-        & $\Pi+CS^0$ \\
+        & $\Delta^l$ \\
       \bottomrule
     \end{tabular}
-  \end{center}
+  \end{table}
 
   \begin{block}{High-fee and imitation paths}
     \begin{itemize}
-      \item \textbf{High fee} ($M$ as marketplace): $\tau = b + \Delta^l$.
+      \item \textbf{High fee} ($M$ as marketplace): $\tau = b + \Delta^l$, from self-preferencing $M$ may choose to not show $S$, thereby capturing $S$'s full profit.
       \item \textbf{Imitation} ($M$ as seller): $p_m = b + \Delta^l$.
     \end{itemize}
   \end{block}
 
   \begin{itemize}
-    \item $\pi=0$: with a high fee, $M$ extracts all of $S$'s price margin;
-      with imitation, $M$ makes all sales itself.
+    \item $\pi=0$: (1) with a high fee, $M$ extracts all of $S$'s price margin;
+      (2) with imitation, $M$ makes all sales itself.
     \item $\Delta=\Delta^l$: since $S$'s operating profit does not increase
       with $\Delta$, it has no incentive to innovate above the minimum level.
   \end{itemize}
 
 \end{frame}
 
+\subsection{ban}
 \begin{frame}
   \frametitle{Policy Map: How the Bans Are Related}
   \scriptsize
@@ -417,309 +414,441 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Dual-Mode Ban -- Step 1: What Is Banned?}
+  \frametitle{Dual-Mode Ban - Setup}
   \small
-  \begin{block}{Policy object}
-    The ban removes the platform's ability to operate in dual mode within this
-    product category.
+
+  \begin{block}{Dual-Mode Ban}
+    \begin{itemize}
+      \item \textbf{Economic meaning}: $M$ can only choose between being a \textbf{seller} or a \textbf{marketplace}, but can still choose \textbf{imitation} or \textbf{self-preference} behavior.
+      \item \textbf{Mathematical meaning}: $M$'s stage-0 choice set is reduced from $\{\text{Marketplace},\text{Seller},\text{Dual}\}$ to $\{\text{Marketplace},\text{Seller}\}$.
+    \end{itemize}
   \end{block}
 
-  \begin{itemize}
-    \item \textbf{Economic meaning}: $M$ cannot both host $S$ on its marketplace
-      and sell its own competing product in the same category.
-    \item \textbf{What it does not directly ban}: product imitation or
-      self-preferencing as practices.
-    \item \textbf{Mathematical meaning}: remove dual mode from $M$'s stage-0
-      choice set,
-      \[
-        \{\text{Marketplace},\text{Seller},\text{Dual}\}
-        \quad\longrightarrow\quad
-        \{\text{Marketplace},\text{Seller}\}.
-      \]
-  \end{itemize}
-
-  \begin{block}{Post-ban mode choice}
-    \begin{equation}
-      M \text{ chooses } \arg\max\{\Pi^{mkt},\Pi^{sell}\}.
-    \end{equation}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Dual-Mode Ban -- Computing the Post-Ban Outcome}
-  \scriptsize
-  Once dual mode is removed, $M$ compares the two pure modes.
-
-  \begin{center}
-    \setlength{\tabcolsep}{3pt}
+  \vspace{-0.2cm}
+    \begin{table}
+      \centering
+      % \caption{Post-ban mode choice}
+      % \label{tab:post-ban-mode-choice}
     \begin{tabular}{@{}lccccc@{}}
       \toprule
-      Mode & $\Pi$ & $\pi$ & $\Delta$ & $CS$ & $W$ \\
+      Mode & $\tau^*$ & $\Delta$ & $\Pi$ & $\pi$  & $CS$ \\
       \midrule
       Seller
+        & $\tau^* \geq b$
+        & $\Delta^*=\Delta^l$
         & $(b+\sigma)G(\nu)$
         & $0$
-        & $\Delta^l$
-        & $CS^0$
-        & $(b+\sigma)G(\nu)+CS^0$ \\
+        & $CS^0$\\
       Marketplace
-        & $bG(\nu)$
+        & $\tau^* \leq b$
+        & $\Delta^*=\Delta^{mkt}$
+        & $\tau^* G(\nu)$
         & $\Delta^{mkt}G(\nu)-K(\Delta^{mkt})$
-        & $\Delta^{mkt}$
-        & $CS^0$
-        & $(b+\Delta^{mkt})G(\nu)-K(\Delta^{mkt})+CS^0$ \\
+        & $CS^0$ \\
       \bottomrule
     \end{tabular}
-  \end{center}
+  \end{table}
 
-  \begin{block}{Mode selected after the ban}
-    If $\sigma>0$, $M$ chooses seller mode; if $\sigma\leq0$, $M$ chooses
-    marketplace mode.
-  \end{block}
+  \begin{itemize}
+    \item $p^*_m = \min\{b, \tau^*\} + \sigma$ and $\tau^* = b$, see Eq. \eqref{eq:pm*}.
+    \item $p^*_i = \min\{\Delta^*, b + \Delta^* - \tau^*\}$, see Eq. \eqref{eq:pi*}.
+  \end{itemize}
+  % \end{block}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Dual-Mode Ban -- Step 2: Equilibrium Result}
+  \frametitle{Dual-Mode Ban - Equilibrium}
   \small
-  \textbf{Proposition 6.} Compare the post-ban pure-mode outcome with the
-  Proposition 5 dual-mode benchmark.
 
-  \begin{center}
+  \begin{table}
+    \centering
+    \caption{Effects of a dual-mode ban (Proposition 6) v.s. Table \ref{tab:Proposition5}}
+    \label{tab:dual-mode-ban-effects}
     \scriptsize
+    \setlength{\tabcolsep}{1.5pt}
+    % \renewcommand{\arraystretch}{1.15}
     \begin{tabular}{@{}lcccccc@{}}
       \toprule
-      Region & $M$'s choice of mode & $\Pi$ & $\pi$ & $CS$ & $\Delta$ & $W$ \\
+      Region & $M$'s choice of mode & $\Pi$ & $\pi$ & $CS = CS^0$ & $\Delta$ & $W$ \\
       \midrule
       $\sigma\geq\Delta^l$
-        & Seller & $=$ & $=$ & $=$ & $=$ & $=$ \\
+        & Seller & $ $ & 0 & & $\Delta^l$ & $ $ \\
+        & & $[=]$ & $[=]$ & $[=]$ & $[=]$ & $[=]$ \\
+        \cmidrule(lr){2-7}
       $0<\sigma<\Delta^l$
-        & Seller & $\downarrow$ & $=$ & $=$ & $=$ & $\downarrow$ \\
+        & Seller & $(b+\sigma)G(\nu)$ & 0 & & $\Delta^l$ & $(b+\sigma)G(\nu)+CS^0$ \\
+        & & $[\downarrow]$ & $[=]$ & $[=]$ & $[=]$ & $[\downarrow]$ \\
+        \cmidrule(lr){2-7}
       $\sigma\leq0$
-        & Marketplace & $\downarrow$ & $\uparrow$ & $=$ & $\uparrow$ & $\uparrow$ \\
+        & Marketplace & ${bG(\nu)}$ & $\Delta^{mkt}G(\nu)-K(\Delta^{mkt})$ & & $\Delta^{mkt}$ & $(b+\Delta^{mkt})G(\nu)-K(\Delta^{mkt})+CS^0$ \\
+        & & $[\downarrow]$ & $[\uparrow]$ & $[=]$ & $[\uparrow]$ & $[\uparrow]$ \\
       \bottomrule
     \end{tabular}
-  \end{center}
+  \end{table}
 
-  \begin{alertblock}{Interpretation}
-    A structural ban changes $M$'s business model, but it does not directly
-    restore on-platform competition or innovation incentives.
-  \end{alertblock}
+  \begin{itemize}
+    \item $0<\sigma<\Delta^l$: \textbf{(1) math}: $(b+\sigma)G(\nu) < (b + \Delta^l)G(\nu) \to W \downarrow$. \textbf{(2) econ}: \(M\) to switch to seller mode, so \(S\)'s superior product is no longer discovered through the platform.
+    \item $\sigma\leq0$: \textbf{(1) math}: $\cancel{bG(\nu)} + \Delta^{mkt}G(\nu)-K(\Delta^{mkt}) > \cancel{bG(\nu)} + \Delta^{l}G(\nu) \to W \uparrow$. \textbf{(2) econ}: \(M\) to switch to marketplace mode, so \(S\)'s inferior product is now discovered through the platform.
+  \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-  \frametitle{Alternative Policy: Behavioral Remedies}
-  \small
-  Instead of banning the dual role itself, the regulator can target specific
-  conduct within dual mode.
+  \frametitle{Self-Preferencing Ban - Setup}
+  \footnotesize
 
-  \begin{center}
-    \scriptsize
-    \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}@{}}
-      \toprule
-      Remedy & What is banned & Main channel restored \\
-      \midrule
-      Ban self-preferencing only
-        & $M$ must show $S$ when $S$ is listed
-        & on-platform competition; showrooming constraint \\
-      Ban imitation only
-        & $M$ cannot copy $S$'s innovation
-        & $S$'s innovation incentive, if commitment is valuable \\
-      Ban both practices
-        & no steering and no copying
-        & baseline dual-mode mechanisms \\
-      \bottomrule
-    \end{tabular}
-  \end{center}
-
-  \begin{alertblock}{Logic}
-    For each behavioral remedy, use the same two-step structure: identify the
-    banned conduct, then compare the resulting equilibrium with Proposition 5.
-  \end{alertblock}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Self-Preferencing Ban -- Step 1: What Is Banned?}
-  \small
-  \begin{block}{Policy object}
-    $M$ must always disclose/show $S$'s product whenever $S$ participates on
-    the marketplace.
+  \begin{block}{Self-Preferencing Ban}
+    \begin{itemize}
+      \item \textbf{Economic meaning}: if $S$ participates $M$ cannot steer consumers away from $S$.
+      \item \textbf{Mathematical meaning}: the disclosure choice is removed and the showrooming constraint is restored ($\tau^*\leq b$).
+      % \item \textbf{Still allowed}: $M$ can imitate $S$ after observing the innovation. ($$)
+    \end{itemize}
   \end{block}
 
   \begin{itemize}
-    \item \textbf{Economic meaning}: $M$ cannot steer consumers away from $S$;
-      consumers observe all on-platform offers.
-    \item \textbf{What remains allowed}: product imitation by $M$.
-    \item \textbf{Mathematical meaning}: the showrooming constraint is restored,
-      so $M$ cannot set a fee above the outside-channel discipline:
-      \[
-        \tau\leq b.
-      \]
+    \item For $M$: $\tau^* = b$, $p^*_m = b + \max\{\sigma - \Delta^*, 0\} $ (no imitation, imitation) \\
+    and $\Pi = \max\left\{ \tau^* G(\nu + b +\Delta^l - p^*_i), p^*_m G(\nu + b + \sigma - p^*_m) \right\} = {(b+\max\{\sigma-\Delta^l,0\}) G(\nu + \Delta^*)}$  (seller, marketplace).
+    \item For $S$: $\Delta = \Delta^l$, $p^*_i = b$, $p^*_o = 0$ \\
+    and $\pi = \max \left\{ (p^*_i -\tau^*) G(\nu + b + \Delta^* - p^*_i), p^*_o G(\nu + \Delta^* - p^*_o ) \right\} = {0}$ (through $M$, directly).
   \end{itemize}
-
-  \begin{block}{Post-intervention dual-mode outcome}
-    \begin{equation}
-      \tau=b,\qquad \Delta=\Delta^l,\qquad
-      \Pi=(b+\max\{\sigma-\Delta^l,0\})G(\nu+\Delta^l),\qquad \pi=0.
-    \end{equation}
-  \end{block}
+  
+  \begin{table}
+  \centering
+  \scriptsize
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}lccccccc@{}}
+    \toprule
+    Regime & Outcome & $\tau$ & $\Delta$ & $p^*_m$ & $p^*_s$ & $\Pi$ & $\pi$  \\ 
+    \midrule
+    $\sigma<\Delta^l$
+      & Dual, imitation, $S$ sells
+      & $b$
+      & $\Delta^l$ 
+      & $b$
+      & $p_i^*=b$
+      & $bG(\nu+\Delta^l)$
+      & $0$ \\ 
+    $\sigma\geq\Delta^l$
+      & Dual, no imitation, $M$ sells
+      & $b$
+      & $\Delta^l$ 
+      & $b+\sigma-\Delta^l$
+      & $p_i^*=b$
+      & $(b+\sigma-\Delta^l)G(\nu+\Delta^l)$
+      & $0$ \\ 
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+  
 \end{frame}
 
 \begin{frame}
-  \frametitle{Self-Preferencing Ban -- Step 2: Equilibrium Result}
-  \small
-  \textbf{Proposition 7.} Let $\underline{\sigma}^{steer}$ be the cutoff at
-  which $M$ is indifferent between seller mode and dual mode without
-  self-preferencing.
+  \frametitle{Self-Preferencing Ban - Equilibrium}
+  \scriptsize
+  \vspace{-0.35cm}
+  \begin{table}
+  \centering
+  \caption{Effects of banning self-preferencing (Proposition 7) v.s. Table \ref{tab:Proposition5}}
+  \label{tab:self-preferencing-ban-effects}
+  \scriptsize
+  \begin{threeparttable}
+  \begin{tabular}{@{}lcccccc@{}}
+    \toprule
+    Region & $M$'s choice of mode & $\Pi$ & $\pi$ & $CS$  & $\Delta$ & $W$ \\ 
+    \midrule
+    $\sigma\geq\Delta^l$
+      & Seller
+      & &  &  &  &  \\
+      & & $[=]$ & $[=]$ & $[=]$ & $[=]$ & $[=]$ \\
+      \cmidrule(lr){2-7}
+    $\underline{\sigma}^{steer}<\sigma<\Delta^l$
+      & Seller
+      & $(b+\sigma)G(\nu)$  &  & &  &  \\
+      & & $[\downarrow]$ & $[=]$ & $[=]$ & $[=]$ & $[\downarrow]$ \\
+      \cmidrule(lr){2-7}
+    $\sigma\leq\underline{\sigma}^{steer}$
+      & Dual, no self-pref.
+      & $bG(\nu+\Delta^l)$ & & $CS^{ns}$ &  & $\Pi+CS^{ns}$ \\
+      & & $[\downarrow]$ & $[=]$ & $[\uparrow]$ & $[=]$ & $[\uparrow]$ \\
+    \bottomrule
+  \end{tabular}
 
-  \begin{center}
+  \begin{tablenotes}
     \scriptsize
+    \item Note: 
+    $CS^{ns}\equiv\int_0^\infty\max\{\nu+\Delta^l,\nu_o\}\,dG(\nu_o)$; 
+    $CS^{0}\equiv\int_0^\infty\max\{\nu,\nu_o\}\,dG(\nu_o)$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+  \vspace{-0.15cm}
+  \begin{itemize}
+    \item $\underline{\sigma}^{steer}<\sigma<\Delta^l$: \textbf{math}: $(b+\sigma)G(\nu)<(b+\Delta^l)G(\nu)$. \textbf{econ}: $M$ switches to seller mode; $S$ is not discovered.
+    \item $\sigma\leq\underline{\sigma}^{steer}$: 
+    \begin{itemize} \scriptsize
+      \item $\Pi \downarrow$: \textbf{math}: $b G(\nu + \Delta^l) < (b + \Delta^l) G(\nu)$  by assumption 2. \textbf{econ}: restored competition lowers prices and expands demand.
+      \item $W \uparrow$: \textbf{math}: $bG(\nu+\Delta^l) + CS^{ns} > (b+\Delta^l)G(\nu) + CS^0$ $ \Leftrightarrow b \left[ G(\nu+\Delta^l)-G(\nu) \right] + \int_{\nu}^{\nu+\Delta^l} (\nu+\Delta^l-\nu_o)\,dG(\nu_o) >0$. \textbf{econ}: consumers are better off with $S$'s product being discovered, and get the more consumer.
+    \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Imitation Ban - Setup}
+  \small
+
+  \begin{block}{Imitation Ban}
+    \begin{itemize}
+      \item \textbf{Economic meaning}: $M$ can credibly commit not to copy $S$'s product, $S$ again benefit from innovation.
+      \item \textbf{Mathematical meaning}: $M$ can only effect high innovation by choosing a fee ($ \tau\leq\bar{\tau} $) \footnote{$\bar{\tau}$ is the highest fee that allows $S$ to have high innovation, satisfied $(\bar{\Delta}-\sigma-\bar{\tau})G(\nu+b+\sigma)-K(\bar{\Delta})=0$.}
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Innovation condition (Eq. \eqref{eq:innovation-condition-m} or Eq. \eqref{eq:innovation-condition-s} holds)}
+    \begin{itemize}
+  \item Innovation-preserving condition for $M$: 
+  \begin{equation}\label{eq:innovation-condition-m}
+    \bar{\tau} G(\nu+\sigma+b) 
+    \geq 
+    (b+\max\{\sigma,\Delta^l\})G(\nu).
+  \end{equation}
+  left - $M$'s profit from preserving innovation; 
+  right - $M$'s profit from from rent extraction.
+
+  \item Non-binding innovation constraint for $S$: 
+  \begin{equation}\label{eq:innovation-condition-s}
+    b+\Delta^l\leq\bar{\tau}.
+  \end{equation}
+  left - the extractive fee; right - the  highest fee compatible with high innovation.
+\end{itemize}
+  \end{block}
+
+  % \vspace{-0.15cm}
+  % \begin{table}
+  %   \centering
+  %   % \caption{Dual mode without imitation}
+  %   % \label{tab:no-imitation-post-ban}
+  %   \scriptsize
+  %   \setlength{\tabcolsep}{2pt}
+  %   \begin{tabular}{@{}llcccc@{}}
+  %     \toprule
+  %     Condition & $M$'s choice & $\tau$ & $\Pi$ & $\pi$ & $\Delta$ \\ 
+  %     \midrule
+  %     Eq. \eqref{eq:innovation-condition-m} or Eq. \eqref{eq:innovation-condition-s} holds
+  %       & dual, innovation & $\bar{\tau}$ & $\bar{\tau}G(\nu+\sigma+b)$ & $0$ & $\bar{\Delta}$ \\ 
+  %     Otherwise
+  %       & dual, extractive & $b+\Delta^l$ & $(b+\max\{\sigma,\Delta^l\})G(\nu)$ & $0$ & $\Delta^l$ \\ 
+  %     \bottomrule
+  %   \end{tabular}
+  % \end{table}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Imitation Ban - Equilibrium}
+  \scriptsize
+
+  \begin{table}
+    \centering
+    \caption{Effects of banning imitation (Proposition 8) v.s. Table \ref{tab:Proposition5}}
+    \label{tab:imitation-ban-effects}
+    \begin{threeparttable}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}lcccccc@{}}
       \toprule
-      Region & $M$'s choice of mode & $\Pi$ & $\pi$ & $CS$ & $\Delta$ & $W$ \\
+      Region & $M$'s mode & $\Pi$ & $\pi$ & $CS$ & $\Delta$ & $W$ \\ 
       \midrule
-      $\sigma\geq\Delta^l$
-        & Seller & $=$ & $=$ & $=$ & $=$ & $=$ \\
-      $\underline{\sigma}^{steer}<\sigma<\Delta^l$
-        & Seller & $\downarrow$ & $=$ & $=$ & $=$ & $\downarrow$ \\
-      $\sigma\leq\underline{\sigma}^{steer}$
-        & Dual, no self-pref. & $\downarrow$ & $=$ & $\uparrow$ & $=$ & $\uparrow$ \\
+      Innovation condition fails
+        & Dual, no imitation
+        & $(b+\max\{\sigma,\Delta^l\})G(\nu)$ & $0$ & $CS^0$ & $\Delta^l$ & $\Pi+CS^0$ \\
+        & & $[=]$ & $[=]$ & $[=]$ & $[=]$ & $[=]$ \\
+        \cmidrule(lr){2-7}
+      Innovation condition holds
+        & Dual, no imitation
+        & $\bar{\tau}G(\nu+\sigma+b)$ & $0$ & $CS^{ni}$ & $\bar{\Delta}$ & $\Pi+CS^{ni}$ \\
+        & & $[\uparrow]$ & $[=]$ & $[\uparrow]$ & $[\uparrow]$ & $[\uparrow]$ \\
       \bottomrule
     \end{tabular}
-  \end{center}
+    }
+    \begin{tablenotes}
+      \scriptsize
+      \item $CS^{ni}\equiv\int_0^\infty\max\{\nu+b+\sigma,\nu_o\}\,dG(\nu_o)$.
+      $CS^0\equiv\int_0^\infty\max\{\nu,\nu_o\}\,dG(\nu_o)$.
+    \end{tablenotes}
+    \end{threeparttable}
+  \end{table}
 
-  \begin{alertblock}{Interpretation}
-    This ban restores price competition, but not innovation: imitation still
-    keeps $S$'s equilibrium profit at zero.
-  \end{alertblock}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Imitation Ban -- Step 1: What Is Banned?}
-  \small
-  \begin{block}{Policy object}
-    $M$ is prohibited from copying $S$'s product innovation.
-  \end{block}
-
+  \vspace{-0.15cm}
   \begin{itemize}
-    \item \textbf{Economic meaning}: $M$ can credibly commit not to imitate,
-      so \(S\)'s innovation may become valuable again.
-    \item \textbf{What remains allowed}: self-preferencing/steering by $M$.
-    \item \textbf{Mathematical meaning}: $M$ can choose a fee that respects the
-      innovation constraint
-      \[
-        \tau\leq\bar{\tau},
-      \]
-      where $\bar{\tau}$ is the fee cutoff that keeps $S$ willing to choose
-      high innovation.
+    \item Condition fails: \textbf{math}: $\tau=b+\Delta^l$ and $\Delta=\Delta^l$, so the outcome equals Proposition 5. \textbf{econ}: innovation condition fails.
+    \item Condition holds:
+    \begin{itemize}\scriptsize
+      \item $\Pi \uparrow$: \textbf{math}: $\bar{\tau}G(\nu+\sigma+b) > (b+\Delta^l)G(\nu)$, by Eq \eqref{eq:innovation-condition-m} or Eq \eqref{eq:innovation-condition-s}. \textbf{econ}: commitment not to copy lets $M$ induce high innovation and sell to a larger market.
+      \item $W \uparrow$: \textbf{math}: $\Pi\uparrow, CS \uparrow$. \textbf{econ}: higher innovation expands demand and consumers benefit.
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Imitation Ban -- Step 2: Equilibrium Result}
-  \scriptsize
-  \textbf{Proposition 8.} The ban has an effect only when it induces $M$ to set
-  $\tau=\bar{\tau}$ and preserve $S$'s innovation incentive.
+  \frametitle{Ban Both Practices - Setup}
+  \small
 
-  \begin{block}{Condition for the innovation-preserving equilibrium}
-    \begin{equation}
-      b+\Delta^l\leq\bar{\tau}
-      \quad\text{or}\quad
-      \bar{\tau}G(\nu+\sigma+b)
-      \geq (b+\max\{\sigma,\Delta^l\})G(\nu).
-    \end{equation}
+  \begin{block}{Ban Imitation and Self-Preferencing}
+    \begin{itemize}
+      \item \textbf{Economic meaning}: $M$ compete on price and quality, but can still choose to be a seller or a marketplace.
+      \item \textbf{Mathematical meaning}: $\Delta = \bar{\Delta}$ (no imitation) and $\tau \leq b$ (no self-preferencing).
+    \end{itemize}
   \end{block}
 
-  \begin{center}
+  \vspace{-0.15cm}
+  \begin{table}
+    \centering
+    \caption{Post-ban mode logic}
+    \label{tab:ban-both-post-ban}
     \scriptsize
-    \begin{tabular}{@{}p{0.38\linewidth}cccccc@{}}
+    \begin{tabular}{@{}lccc@{}}
       \toprule
-      Region & $M$'s mode & $\Pi$ & $\pi$ & $CS$ & $\Delta$ & $W$ \\
+      Mode selected by $M$ & Key constraint & Innovation & Main mechanism \\ 
       \midrule
-      $b+\Delta^l>\bar{\tau}$ and condition fails
-        & Dual, no imitation & $=$ & $=$ & $=$ & $=$ & $=$ \\
-      $b+\Delta^l\leq\bar{\tau}$ or condition holds
-        & Dual, no imitation & $\uparrow$ & $=$ & $\uparrow$ & $\uparrow$ & $\uparrow$ \\
+      Seller
+        & no marketplace for $S$ & $\Delta^l$ & discovery of $S$ is lost \\ 
+      Dual
+        & $\tau\leq b$ and possibly $\tau\leq\bar{\tau}$
+        & $\Delta^l$ or $\bar{\Delta}$ & price squeeze plus innovation incentive \\ 
       \bottomrule
     \end{tabular}
-  \end{center}
+  \end{table}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Ban Both Practices -- Step 1: What Is Banned?}
-  \small
-  \begin{block}{Policy object}
-    $M$ is prohibited from both self-preferencing and product imitation.
-  \end{block}
-
-  \begin{itemize}
-    \item \textbf{Economic meaning}: consumers see $S$'s product, and $S$ is
-      protected from copying by $M$.
-    \item \textbf{Mathematical meaning}: the model returns to the baseline
-      dual-mode mechanism from Proposition 3.
-    \item The showrooming constraint disciplines $\tau$, and the absence of
-      imitation can restore $S$'s innovation incentive.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Ban Both Practices -- Step 2: Equilibrium Result}
+  \frametitle{Ban Both Practices - Equilibrium}
   \scriptsize
-  \textbf{Proposition 9.} Let $\underline{\sigma}$ be the baseline cutoff at
-  which $M$ switches between seller mode and dual mode after both practices are
-  banned.
 
-  \begin{center}
-    \scriptsize
-    \setlength{\tabcolsep}{2pt}
-    \begin{tabular}{@{}p{0.20\linewidth}p{0.30\linewidth}ccccc@{}}
+  \begin{table}
+    \centering
+    \caption{Effects of banning both practices (Proposition 9) v.s. Table \ref{tab:Proposition5}}
+    \label{tab:ban-both-practices-effects}
+    \begin{threeparttable}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lcccccc@{}}
       \toprule
-      Region & $M$'s choice of mode & $\Pi$ & $\pi$ & $CS$ & $\Delta$ & $W$ \\
+      Region & $M$'s choice of mode & $\Pi$ & $\pi$ & $CS$ & $\Delta$ & $W$ \\ 
       \midrule
       $\sigma\geq\max\{\underline{\sigma},\Delta^l\}$
-        & Seller & $=$ & $=$ & $=$ & $=$ & $=$ \\
+        & Seller
+        & $[=]$ & $[=]$ & $[=]$ & $[=]$ & $[=]$ \\
+        \cmidrule(lr){2-7}
       $\underline{\sigma}<\sigma<\Delta^l$
-        & Seller & $\downarrow$ & $=$ & $=$ & $=$ & $\downarrow$ \\
+        & Seller
+        & $[\downarrow]$ & $[=]$ & $[=]$ & $[=]$ & $[\downarrow]$ \\
+        \cmidrule(lr){2-7}
       $\sigma\leq\underline{\sigma}$
         & Dual, no imitation or self-pref.
-        & $\downarrow$
-        & $\uparrow^\dagger$ or $=$
-        & $\uparrow$
-        & $\uparrow^\ddagger$ or $=$
-        & $\uparrow$ \\
+        & $\Pi^{P3}$
+        & $\pi^{P3}$
+        & $CS^{P3}$
+        & $\Delta^{P3}$
+        & $\Pi^{P3}+\pi^{P3}+CS^{P3}$ \\
+        & & $[\downarrow]$
+        & $[\uparrow]^\dagger$ or $[=]$
+        & $[\uparrow]$
+        & $[\uparrow]^\ddagger$ or $[=]$
+        & $[\uparrow]$ \\ 
       \bottomrule
     \end{tabular}
-  \end{center}
+    }
+    \begin{tablenotes}
+      \scriptsize
+      \item $(\Pi^{P3},\pi^{P3},CS^{P3},\Delta^{P3})$: baseline dual-mode outcome in Proposition 3.
+      \item $\dagger$: $\pi$ increases if $b<\bar{\tau}$; $\ddagger$: $\Delta$ increases if $b\leq\bar{\tau}$ or condition (8) holds.
+    \end{tablenotes}
+    \end{threeparttable}
+  \end{table}
 
+  \vspace{-0.15cm}
   \begin{itemize}
-    \item $\dagger$: $\pi$ increases if $b<\bar{\tau}$; otherwise it is unchanged.
-    \item $\ddagger$: $\Delta$ increases if $b<\bar{\tau}$ or condition (8) holds; otherwise it is unchanged.
+    \item $\underline{\sigma}<\sigma<\Delta^l$: \textbf{math}: $(b+\sigma)G(\nu)<(b+\Delta^l)G(\nu)$, so $W\downarrow$. \textbf{econ}: $M$ switches to seller mode and $S$ is no longer discovered.
+    \item $\sigma\leq\underline{\sigma}$: \textbf{math}: $W^{P3}>(b+\Delta^l)G(\nu)+CS^0$. \textbf{econ}: the policy restores both visibility and innovation incentives while preserving dual-mode competition.
   \end{itemize}
-
-  \begin{alertblock}{Interpretation}
-    Banning both practices restores both channels: price discipline from
-    visibility and innovation incentives from no imitation.
-  \end{alertblock}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Policy Comparison}
-  \small
-  \begin{itemize}
-    \item \textbf{Structural ban}: removes dual mode, but does not directly fix
-      imitation or self-preferencing.
-    \item \textbf{Ban self-preferencing}: restores price competition, but
-      innovation remains low because imitation is still possible.
-    \item \textbf{Ban imitation}: can restore innovation when $M$ benefits from
-      committing not to copy.
-    \item \textbf{Ban both}: closest to the baseline dual-mode mechanism and
-      can restore both price competition and innovation.
-  \end{itemize}
+  \frametitle{Policy Comparison: $\sigma>0$}
+  \scriptsize
 
-  \begin{alertblock}{Policy lesson}
-    The harmful conduct is often a better regulatory target than the platform's
-    dual role itself.
-  \end{alertblock}
+  \begin{table}
+    \centering
+    \caption{Behavioral remedies relative to a dual-mode ban (Corollary 2)}
+    \label{tab:corollary2-positive-sigma}
+    \begin{threeparttable}
+    % \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llccccc@{}}
+      \toprule
+      Region & Remedy & $\Pi$ & $\pi$ & $CS$ & $\Delta$ & $W$ \\
+      \midrule
+      $\sigma\in(0,\underline{\sigma}^{steer}]$
+        & Ban self-preferencing & $\uparrow$ & $=$ & $\uparrow$ & $=$ & $\uparrow$ \\
+      $\sigma>\underline{\sigma}^{steer}$
+        & Ban self-preferencing & $=$ & $=$ & $=$ & $=$ & $=$ \\
+      \cmidrule(lr){2-7}
+      All $\sigma>0$
+        & Ban imitation & $\uparrow$ & $=$ & $\uparrow$ & $\uparrow$ & $\uparrow$ \\
+      \cmidrule(lr){2-7}
+      $\sigma\in(0,\underline{\sigma}]$
+        & Ban both practices & $\uparrow$ & $\uparrow$ & $\uparrow$ & $\uparrow$ & $\uparrow$ \\
+      $\sigma>\underline{\sigma}$
+        & Ban both practices & $=$ & $=$ & $=$ & $=$ & $=$ \\
+      \bottomrule
+    \end{tabular}
+    % }
+    \begin{tablenotes}
+      \scriptsize
+      \item Baseline: under a dual-mode ban and $\sigma>0$, $M$ chooses seller mode. Arrows are weak changes.
+    \end{tablenotes}
+    \end{threeparttable}
+  \end{table}
+
+  \vspace{-0.25cm}
+  {\tiny \textbf{Interpretation}: when $M$ has a selling advantage, structural bans push it into seller mode; behavioral remedies preserve useful dual-mode channels while restoring visibility or innovation.}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Policy Comparison: $\sigma\leq0$}
+  \scriptsize
+
+  \begin{table}
+    \centering
+    \caption{Behavioral remedies relative to a dual-mode ban (Corollary 2)}
+    \label{tab:corollary2-nonpositive-sigma}
+    \begin{threeparttable}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lccccc@{}}
+      \toprule
+      Remedy & $\Pi$ & $\pi$ & $CS$ & $\Delta$ & $W$ \\
+      \midrule
+      Ban self-preferencing
+        & $\uparrow$ & $\downarrow$ & $\uparrow$ & $\downarrow$
+        & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}$\uparrow$ if condition (9) holds\\ $\downarrow$ otherwise\end{tabular}} \\
+      Ban imitation
+        & $\uparrow$ & $\downarrow$ & $\uparrow$
+        & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}$\uparrow$ if Eq. \eqref{eq:innovation-condition-m} holds\\ $\downarrow$ otherwise\end{tabular}}
+        & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}$\uparrow$ if $\Delta$ increases\\ $\downarrow$ otherwise\end{tabular}} \\
+      Ban both practices
+        & $\uparrow$ & $\uparrow$ & $\uparrow$
+        & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}$\uparrow$ if $b\leq\bar{\tau}$ or condition (8) holds\\ $\downarrow$ otherwise\end{tabular}}
+        & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}$\uparrow$ if $\Delta$ increases or condition (9) holds\\ $\downarrow$ otherwise\end{tabular}} \\
+      \bottomrule
+    \end{tabular}
+    }
+    \begin{tablenotes}
+      \scriptsize
+      \item Baseline: under a dual-mode ban and $\sigma\leq0$, $M$ chooses marketplace mode. Arrows are weak changes.
+    \end{tablenotes}
+    \end{threeparttable}
+  \end{table}
+
+  \vspace{-0.25cm}
+  \parbox{0.92\textwidth}{\tiny \textbf{Interpretation}: when $M$ is worse than fringe sellers, marketplace mode may protect innovation, so $W$ is ambiguous.}
 \end{frame}
 
 
