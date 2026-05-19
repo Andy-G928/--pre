@@ -1,183 +1,1027 @@
-﻿\section{Equilibrium Analysis}
+\section{Equilibrium Analysis}
 
 \begin{frame}
-  \frametitle{Marketplace Mode}
-  \small
-  In marketplace mode, $M$ only charges commission $\tau$.
+  \frametitle{Three Operating Modes}
+  \footnotesize
+  This section first defines the three operating modes available to $M$,
+  then derives the equilibrium outcome under each mode.
 
-  \begin{equation*}
-    p_i \leq \tau+\Delta, \qquad p_o \leq \tau+\Delta-b
-  \end{equation*}
+  \vspace{0.15cm}
+  \begin{table}
+    \centering
+    \scriptsize
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabularx}{\textwidth}{@{}p{2.35cm}X X X@{}}
+      \toprule
+      \textbf{Mode chosen by $M$}
+        & \textbf{Platform $M$}
+        & \textbf{Seller $S$}
+        & \textbf{Fringe sellers} \\
+      \midrule
+      Marketplace mode
+        & Hosts the marketplace and sets commission $\tau$; does not sell its own product.
+        & Joins the marketplace, chooses innovation $\Delta$, inside price $p_i$, and outside price $p_o$.
+        & Provide the competitive benchmark on and off the platform. \\
+      Seller mode
+        & Sells only its own product and sets price $p_m$.
+        & \textemdash\textemdash
+        & Provide the outside competitive benchmark. \\
+      Dual mode
+        & Hosts the marketplace, sets commission $\tau$, sells its own product, and sets price $p_m$.
+        & Joins the marketplace, chooses innovation $\Delta$, inside price $p_i$, and outside price $p_o$.
+        & Provide the competitive benchmark on and off the platform. \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
 
-  \begin{block}{Showrooming constraint}
-    If $\tau>b$, seller $S$ can use the platform for discovery and then sell directly.
+  \vspace{-0.05cm}
+  \begin{block}{Equilibrium objects}
+    \scriptsize
+    For each mode, the analysis pins down prices, seller innovation,
+    transaction volume, and platform profit.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Marketplace Mode: Setup}
+  \footnotesize
+  In marketplace mode, $M$ operates as a pure intermediary: it hosts sellers,
+  charges a commission $\tau$, and does not sell its own product.
+
+  After joining the marketplace and choosing innovation $\Delta$, seller $S$
+  chooses an inside price $p_i$ and an outside price $p_o$.
+
+  \begin{center}
+    \hypertarget{mp_price_bounds_src}{%
+      \hyperlink{mp_price_bounds_deriv}{%
+        $\displaystyle p_i \leq \tau+\Delta, \qquad
+        p_o \leq \tau+\Delta-b$}}
+  \end{center}
+
+  \begin{block}{Two pricing strategies for $S$}
+    \begin{itemize}
+      \item \textbf{Sell through $M$:} set $p_o>p_i-b$ and choose
+      \[
+        \max_{p_i\leq \tau+\Delta}(p_i-\tau)
+        G(\nu+b+\Delta-p_i).
+      \]
+      \item \textbf{Sell directly:} set $p_i>p_o+b$ and choose
+      \[
+        \max_{p_o\leq \tau+\Delta-b}p_oG(\nu+\Delta-p_o).
+      \]
+    \end{itemize}
   \end{block}
 
   \begin{alertblock}{Intuition}
-    The platform can charge at most the extra convenience value $b$ that it gives consumers.
+    \textbf{$S$ sells through the platform iff $\tau\leq b$.} If $\tau>b$,
+    $S$ uses the platform for discovery but induces consumers to buy directly.
   \end{alertblock}
 \end{frame}
 
 \begin{frame}
   \frametitle{Marketplace Equilibrium}
-  \small
-  Proposition 1:
+  \footnotesize
+  Proposition 1 follows from two binding constraints. Since
+  \textbf{$S$ sells through the platform iff $\tau\leq b$}, $M$ faces the
+  \textit{showrooming constraint} when choosing its commission.
 
-  \begin{equation*}
-    \tau^{mkt}=b, \qquad
-    G(\nu)=K'(\Delta^{mkt}), \qquad
-    p_i^*=b+\Delta^{mkt}
-  \end{equation*}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textit{Showrooming constraint}}
+        The platform fee binds at
+        \begin{center}
+          \hypertarget{mp_showrooming_src}{%
+            \hyperlink{mp_showrooming_deriv}{%
+              $\displaystyle \tau^{mkt}=b$}}
+        \end{center}
+        $M$ charges the highest fee that still keeps trade on the platform.
+      \end{block}
+    \end{column}
 
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\textit{Competitive constraint}}
+        The inside price binds at
+        \begin{center}
+          \hypertarget{mp_competitive_src}{%
+            \hyperlink{mp_competitive_deriv}{%
+              $\displaystyle p_i^*=\tau^{mkt}+\Delta^{mkt}
+              =b+\Delta^{mkt}$}}
+        \end{center}
+        Hence demand is
+        \[
+          G(\nu+b+\Delta^{mkt}-p_i^*)=G(\nu).
+        \]
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.1cm}
   \begin{equation*}
+    K'(\Delta^{mkt})=G(\nu), \qquad
     \Pi^{mkt}=bG(\nu), \qquad
-    \pi^{mkt}=\Delta^{mkt}G(\nu)-K(\Delta^{mkt})
+    \pi^{mkt}=\Delta^{mkt}G(\nu)-K(\Delta^{mkt}).
   \end{equation*}
 
   \begin{block}{Intuition}
-    $M$ sets the highest fee that does not push trade outside the platform. $S$ invests until marginal cost equals marginal market gain.
+    $S$ sells exclusively through the marketplace; innovation is chosen until
+    marginal innovation cost equals the induced transaction volume.
   \end{block}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Seller Mode}
-  \small
-  In seller mode, the platform only sells its own product.
+  \frametitle{Seller Mode: Setup}
+  \footnotesize
+  In seller mode, $M$ sells only its own product. Seller $S$ is unavailable on
+  the platform, so consumers never discover $S$ through $M$.
 
-  \begin{equation}
-    \max_{p_m\leq b+\sigma} p_m G(\nu+b+\sigma-p_m)
-    \label{eq:seller-profit}
-  \end{equation}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Seller $S$}
+        \begin{itemize}
+          \item Its outside price is payoff-irrelevant.
+          \item It chooses the lowest innovation level:
+          \[
+            \Delta^{sell}=\Delta^l.
+          \]
+          \item It makes no sales in equilibrium.
+        \end{itemize}
+      \end{block}
+    \end{column}
 
-  The competitive constraint binds:
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Platform $M$}
+        $M$ chooses the price of its own product:
+        \begin{equation}
+          \max_{p_m\leq b+\sigma}
+          p_m G(\nu+b+\sigma-p_m)
+          \label{eq:seller-profit}
+        \end{equation}
+      \end{block}
+    \end{column}
+  \end{columns}
 
-  \begin{equation*}
-    p_m^*=b+\sigma
-  \end{equation*}
-
-  \begin{block}{Proposition 2}
-    $M$ sells to all consumers, while $S$ sells to no one.
-  \end{block}
-
-  \begin{alertblock}{Intuition}
-    The platform captures its convenience value and its product advantage, but consumers do not discover $S$.
+  \begin{alertblock}{Price cap}
+    The cap $p_m\leq b+\sigma$ comes from competition with fringe sellers in
+    the direct channel: $\nu+\sigma+b-p_m\geq\nu$.
   \end{alertblock}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Dual Mode: Two Pricing Cases}
-  \small
-  In dual mode, $M$ both charges commission and sells its own product.
+  \frametitle{Seller Mode Equilibrium}
+  \footnotesize
+  The \textit{competitive constraint} binds in the seller-mode pricing problem,
+  so $M$ charges the highest price that still beats fringe sellers.
 
-  \begin{block}{Case 1: $\sigma \geq \Delta$}
-    The platform's own product is good enough. Consumers buy from $M$.
-    \[
-      p_i^*=\tau, \qquad p_m^*=\tau+\sigma-\Delta
-    \]
-  \end{block}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Binding price}
+        \begin{center}
+          \hypertarget{seller_competitive_src}{%
+            \hyperlink{seller_competitive_deriv}{%
+              $\displaystyle p_m^*=b+\sigma$}}
+        \end{center}
+        The price equals convenience value plus $M$'s product advantage.
+      \end{block}
+    \end{column}
 
-  \begin{block}{Case 2: $\Delta>\sigma$}
-    Seller $S$ has the better product. But $M$ still puts pressure on $S$'s price.
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Demand and profits}
+        Substituting $p_m^*$ gives demand
+        \[
+          G(\nu+b+\sigma-p_m^*)=G(\nu).
+        \]
+        Therefore
+        \[
+          \Pi^{sell}=(b+\sigma)G(\nu),
+          \qquad
+          \pi^{sell}=0.
+        \]
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \begin{block}{Proposition 2}
+    $M$ sets $p_m^*=b+\sigma$ and sells to all consumers, whereas $S$ sells to
+    no one.
   \end{block}
 
   \begin{alertblock}{Intuition}
-    Dual mode matters most when $S$ is better, but $M$ can still discipline $S$'s price.
+    Seller mode eliminates on-platform competition from $S$: the platform
+    captures convenience value $b$ plus its own product advantage $\sigma$.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dual Mode: Setup}
+  \footnotesize
+  In dual mode, $M$ is both an intermediary and a seller: it hosts $S$, charges
+  commission $\tau$, sells its own product, and sets its own price $p_m$.
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Platform $M$}
+        \begin{itemize}
+          \item sets commission $\tau$;
+          \item sells its own product at price $p_m$;
+          \item earns either commission income or own-product revenue.
+        \end{itemize}
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Seller $S$}
+        \begin{itemize}
+          \item chooses innovation $\Delta$;
+          \item chooses inside price $p_i$ and outside price $p_o$;
+          \item competes with both fringe sellers and $M$'s own product.
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \begin{alertblock}{New force}
+    $M$'s own price becomes an extra cap on $S$'s inside price. This is the
+    source of the price-squeeze mechanism.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dual Mode: Pricing Subgame}
+  \footnotesize
+  Given $\tau$ and $\Delta$, the stage-3 pricing outcome depends on whether
+  $M$'s own product or $S$'s product has the higher quality.
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Semi-seller equilibrium}
+        If $\sigma\geq\Delta$, $M$'s product is weakly better:
+        \begin{center}
+          \hypertarget{dual_semiseller_src}{%
+            \hyperlink{dual_semiseller_deriv}{%
+              $\displaystyle p_i^*=\tau,\quad
+              p_m^*=\tau+\sigma-\Delta$}}
+        \end{center}
+        Consumers buy from $M$; $S$ earns zero operating margin.
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Price-squeeze equilibrium}
+        If $\Delta>\sigma$, $S$'s product is better:
+        \begin{center}
+          \hypertarget{dual_squeeze_src}{%
+            \hyperlink{dual_squeeze_deriv}{%
+              $\displaystyle p_i^*=p_m^*+\Delta-\sigma$}}
+        \end{center}
+        Consumers buy from $S$, but $M$'s own price caps $p_i^*$.
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \begin{alertblock}{Intuition}
+    Dual mode matters when $S$ is better: $M$ may not sell, yet its own product
+    disciplines $S$'s price.
   \end{alertblock}
 \end{frame}
 
 \begin{frame}
   \frametitle{Price Squeeze}
-  \small
-  In the price squeeze equilibrium:
+  \footnotesize
+  When $\Delta>\sigma$, consumers buy from $S$ through the marketplace, but
+  $M$'s own price caps $S$'s inside price.
 
-  \begin{equation}
-    p_i^*=p_m^*+\Delta-\sigma
-    \label{eq:price-squeeze}
-  \end{equation}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Feasible own-product price}
+        The price-squeeze interval is
+        \[
+          \hypertarget{dual_pm_interval_src}{%
+            \hyperlink{dual_pm_interval_deriv}{%
+              p_m^*\in
+              \left[
+                \max\{\tau-\Delta+\sigma,0\},
+                \tau+\min\{\sigma,0\}
+              \right]}}
+        \]
+        and the selected equilibrium uses the lowest feasible $p_m^*$.
+      \end{block}
+    \end{column}
 
-  \begin{equation*}
-    p_m^*\in
-    \left[
-    \max\{\tau-\Delta+\sigma,0\},
-    \tau+\min\{\sigma,0\}
-    \right]
-  \end{equation*}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Platform profit}
+        Given $p_i^*=p_m^*+\Delta-\sigma$, demand is
+        $G(\nu+\sigma+b-p_m^*)$. Hence
+        \begin{center}
+          \hypertarget{dual_profit_src}{%
+            \hyperlink{dual_profit_deriv}{%
+              $\displaystyle \Pi=\tau G(\nu+\sigma+b-p_m^*)$}}
+        \end{center}
+      \end{block}
+    \end{column}
+  \end{columns}
 
-  \begin{equation*}
-    \Pi=\tau G(\nu+\sigma+b-p_m^*)
-  \end{equation*}
-
-  \begin{block}{Intuition}
-    $M$ may not sell, but its own product caps $S$'s price. A lower $S$ price raises demand and commission income.
-  \end{block}
+  \begin{alertblock}{Intuition}
+    A lower $p_m^*$ lowers $S$'s feasible price, expands demand, and raises
+    commission income. This is why the selection rule picks
+    $p_m^*=\max\{\tau-\Delta+\sigma,0\}$.
+  \end{alertblock}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Innovation Constraint}
-  \small
-  Define $\bar{\tau}$ by:
+  \frametitle{Stage-2 Innovation Decision}
+  \footnotesize
+  After selecting the lowest feasible $p_m^*$, $S$'s payoff can be written as
+  \begin{center}
+    \hypertarget{dual_s_profit_src}{%
+      \hyperlink{dual_s_profit_deriv}{%
+        $\displaystyle
+        \pi(\Delta)=
+        \max\{(\Delta-\sigma-\tau)G(\nu+\sigma+b),0\}-K(\Delta)$}}
+  \end{center}
 
-  \begin{equation*}
-    (\bar{\Delta}-\sigma-\bar{\tau})G(\nu+b+\sigma)-K(\bar{\Delta})=0
-  \end{equation*}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Threshold commission}
+        Denote $\bar{\tau}\in(\Delta^l-\sigma,\bar{\Delta}-\sigma)$ by
+        \[
+          \hypertarget{dual_taubar_src}{%
+            \hyperlink{dual_taubar_deriv}{%
+              (\bar{\Delta}-\sigma-\bar{\tau})G(\nu+b+\sigma)
+              -K(\bar{\Delta})=0.}}
+        \]
+      \end{block}
+    \end{column}
 
-  Lemma 1:
-
-  \begin{itemize}
-    \item If $\tau\leq\bar{\tau}$, then $S$ chooses high innovation: $\Delta=\bar{\Delta}$.
-    \item If $\tau>\bar{\tau}$, then $S$ chooses low innovation: $\Delta=\Delta^l$.
-  \end{itemize}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Lemma 1}
+        \begin{itemize}
+          \item If $\tau\leq\bar{\tau}$, then
+            $\Delta=\bar{\Delta}$.
+          \item If $\tau>\bar{\tau}$, then
+            $\Delta=\Delta^l$.
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
 
   \begin{alertblock}{Intuition}
-    A high commission lowers $S$'s margin. If the margin is too low, innovation is not worth the cost.
+    $\bar{\tau}$ is the highest commission compatible with high innovation;
+    above it, price squeeze removes $S$'s incentive to pay $K(\bar{\Delta})$.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Stage-1 Commission Decision}
+  \footnotesize
+  In stage 1, $M$ chooses $\tau$ while anticipating the innovation response.
+  Two constraints shape the choice.
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Low fee, high innovation}
+        Set $\tau\leq\bar{\tau}$, induce $\Delta=\bar{\Delta}$, and earn
+        commission on high demand:
+        \[
+          \tau G(\nu+\sigma+b).
+        \]
+        At the best such policy, $\tau=\min\{b,\bar{\tau}\}$.
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{High fee, low innovation}
+        Set the showrooming upper bound $\tau=b$, accept
+        $\Delta=\Delta^l$, and earn
+        \[
+          \bigl(b+\max\{\sigma-\Delta^l,0\}\bigr)G(\nu+\Delta^l).
+        \]
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \begin{alertblock}{Where the constraints come from}
+    The \textit{showrooming constraint} $\tau\leq b$ keeps transactions on
+    the platform; the \textit{innovation constraint} $\tau\leq\bar{\tau}$
+    keeps $S$ willing to choose high innovation.
   \end{alertblock}
 \end{frame}
 
 \begin{frame}
   \frametitle{Dual Mode Equilibrium}
-  \small
-  Proposition 3: $M$ balances two limits.
+  \footnotesize
+  Proposition 3 gives $M$'s optimal commission after anticipating $S$'s
+  innovation response.
 
   \begin{itemize}
-    \item Showrooming constraint: $\tau\leq b$.
-    \item Innovation constraint: $\tau\leq\bar{\tau}$.
+    \item \textbf{Case 1: $b\leq\bar{\tau}$.} The showrooming upper bound
+      already satisfies the innovation constraint:
+      \[
+        \tau^{dual}=b,\qquad
+        \Delta^{dual}=\bar{\Delta},\qquad
+        \Pi^{dual}=bG(\nu+\sigma+b).
+      \]
+
+    \item \textbf{Case 2: $b>\bar{\tau}$.} $M$ cannot set the high fee $b$
+      and preserve high innovation. It compares
+      \[
+        \hypertarget{dual_prop3_src}{%
+          \hyperlink{dual_prop3_deriv}{%
+            \bar{\tau}G(\nu+\sigma+b)
+            \quad\text{and}\quad
+            \bigl(b+\max\{\sigma-\Delta^l,0\}\bigr)G(\nu+\Delta^l).}}
+      \]
+      If the first term is larger, $M$ sets
+      $(\tau,\Delta)=(\bar{\tau},\bar{\Delta})$; otherwise it sets
+      $(\tau,\Delta)=(b,\Delta^l)$.
+
+    \item \textbf{Trade-off in Case 2.} A lower fee preserves innovation and
+      expands transactions; a higher fee extracts more per transaction but
+      may destroy innovation.
   \end{itemize}
+\end{frame}
 
-  If high innovation is profitable enough:
+\begin{frame}
+  \frametitle{Partial and Complete Price Squeeze}
+  \footnotesize
+  Price squeeze can be partial or complete depending on whether $S$ keeps a
+  positive operating margin after $M$'s selected price.
 
-  \begin{equation*}
-    \tau^{dual}=\min\{b,\bar{\tau}\}, \qquad \Delta^{dual}=\bar{\Delta}
-  \end{equation*}
+  \begin{itemize}
+    \item \textbf{Partial price squeeze.} With high innovation,
+      \[
+        \Delta^{dual}=\bar{\Delta},\qquad
+        p_m^*=0,\qquad
+        p_i^*=\bar{\Delta}-\sigma.
+      \]
+      If $p_i^*>\tau^{dual}$, then $S$ still earns positive margin:
+      \[
+        p_i^*-\tau^{dual}>0.
+      \]
 
-  Otherwise:
+    \item \textbf{Complete price squeeze.} With low innovation and
+      $\Delta^l>\sigma$, $S$ still sells, but $M$ sets $p_m^*$ so that
+      \[
+        p_i^*=\tau^{dual}.
+      \]
+      Then $S$ sells with zero operating margin.
 
-  \begin{equation*}
-    \tau^{dual}=b, \qquad \Delta^{dual}=\Delta^l
-  \end{equation*}
-
-  \begin{block}{Intuition}
-    The platform may charge less to keep $S$ willing to innovate, because innovation expands the market.
-  \end{block}
+    \item \textbf{Boundary case.} If $\Delta^l\leq\sigma$, $M$'s product is
+      weakly better and the pricing subgame becomes the semi-seller
+      equilibrium.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Which Mode Does the Platform Choose?}
-  \small
-  Corollary 1:
+  \footnotesize
+  Corollary 1 compares platform profits across the three operating modes.
 
-  \begin{itemize}
-    \item $M$ prefers marketplace mode over seller mode iff $\sigma\leq 0$.
-    \item Dual mode is always better for $M$ than marketplace mode.
-    \item There is a threshold $\underline{\sigma}>0$ such that:
-  \end{itemize}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Pure modes}
+        \[
+          \Pi^{mkt}=bG(\nu),
+          \qquad
+          \Pi^{sell}=(b+\sigma)G(\nu).
+        \]
+        Therefore
+        \[
+          \Pi^{mkt}\geq\Pi^{sell}
+          \quad\Longleftrightarrow\quad
+          \sigma\leq0.
+        \]
+      \end{block}
+    \end{column}
 
-  \begin{equation*}
-    \Pi^{dual}>\Pi^{sell}
-    \quad \text{iff} \quad
-    \sigma<\underline{\sigma}
-  \end{equation*}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Full choice}
+        \begin{itemize}
+          \item Dual mode strictly dominates marketplace mode:
+            $\Pi^{dual}>\Pi^{mkt}$.
+          \item There is a unique $\underline{\sigma}>0$ such that
+            \[
+              \Pi^{dual}>\Pi^{sell}
+              \quad\Longleftrightarrow\quad
+              \sigma<\underline{\sigma}.
+            \]
+          \item Therefore:
+            \[
+              M \text{ chooses }
+              \begin{cases}
+                \text{dual mode}, & \sigma<\underline{\sigma},\\
+                \text{seller mode}, & \sigma\geq\underline{\sigma}.
+              \end{cases}
+            \]
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
 
   \begin{alertblock}{Intuition}
-    Dual mode creates more transactions through price squeeze. But if $M$'s own product is much better, $M$ may prefer to sell alone.
+    Thus $M$ chooses dual mode when $\sigma<\underline{\sigma}$ and seller
+    mode when $\sigma\geq\underline{\sigma}$. For small $\sigma$, price
+    squeeze creates more transactions; for large $\sigma$, seller mode lets
+    $M$ exploit its own product advantage without revealing $S$.
   \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Baseline Ban on Dual Mode: Mode Switch}
+  \footnotesize
+  Proposition 4 asks what happens if regulation removes dual mode from $M$'s
+  choice set.
+
+  \begin{itemize}
+    \item \textbf{Post-ban choice set:}
+      \[
+        \{\text{marketplace},\text{seller},\text{dual}\}
+        \quad\longrightarrow\quad
+        \{\text{marketplace},\text{seller}\}.
+      \]
+
+    \item \textbf{Post-ban mode choice:}
+      \[
+        M \text{ chooses seller mode iff } \sigma>0,
+        \qquad
+        M \text{ chooses marketplace mode iff } \sigma\leq0.
+      \]
+
+    \item \textbf{Compared with the unconstrained baseline:}
+      \[
+        \begin{array}{lll}
+          \sigma\geq\underline{\sigma}: & \text{seller}\to\text{seller},
+          & \text{no real effect},\\
+          0<\sigma<\underline{\sigma}: & \text{dual}\to\text{seller},
+          & S \text{ disappears from the platform},\\
+          \sigma\leq0: & \text{dual}\to\text{marketplace},
+          & S \text{ remains but price squeeze disappears}.
+        \end{array}
+      \]
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Baseline Ban on Dual Mode: Effects}
+  \scriptsize
+
+  \begin{table}
+    \centering
+    \renewcommand{\arraystretch}{1.22}
+    \begin{tabularx}{\textwidth}{@{}p{2.4cm}p{2.1cm}p{1.1cm}p{1.1cm}p{1.1cm}p{1.1cm}X@{}}
+      \toprule
+      Region & Mode switch & $\Pi$ & $\pi$ & $CS$ & $\Delta$ & Welfare logic \\
+      \midrule
+      $\sigma\geq\underline{\sigma}$
+        & seller $\to$ seller
+        & $=$ & $=$ & $=$ & $=$
+        & Ban is nonbinding because $M$ already prefers seller mode. \\
+      $0<\sigma<\underline{\sigma}$
+        & dual $\to$ seller
+        & $\downarrow$ & $\downarrow$ or $=$ & $\downarrow$ & $\downarrow$ or $=$
+        & Welfare falls: the ban removes $S$ from consumer discovery and weakens transactions. \\
+      $\sigma\leq0$
+        & dual $\to$ marketplace
+        & $\downarrow$ & $\uparrow$ & $\downarrow$ & $\downarrow$ or $\uparrow$
+        & Welfare is ambiguous; it rises only if innovation gains are large enough. \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+
+  \begin{alertblock}{Key implication}
+    A dual-mode ban always weakly lowers consumer surplus. It improves welfare
+    only in the $\sigma\leq0$ region and only when marketplace innovation
+    gains dominate the loss of price-squeeze-driven transaction surplus.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{When Can a Dual-Mode Ban Raise Welfare?}
+  \footnotesize
+  In the $\sigma\leq0$ region, the ban changes the market from dual mode to
+  marketplace mode. Welfare can rise only if two conditions hold.
+
+  \begin{itemize}
+    \item \textbf{Dual mode must have low innovation:}
+      \[
+        \Delta^{dual}=\Delta^l.
+      \]
+      Otherwise the ban replaces high dual-mode innovation
+      $\bar{\Delta}$ with lower marketplace innovation $\Delta^{mkt}$.
+
+    \item \textbf{Marketplace innovation gains must be large enough:}
+      \begin{center}
+        \hypertarget{ban_welfare_condition_src}{%
+          \hyperlink{ban_welfare_condition_deriv}{%
+            $\displaystyle
+            (b+\Delta^{mkt})G(\nu)-K(\Delta^{mkt})
+            >
+            bG(\nu+\Delta^l)
+            +
+            \int_0^{\nu+\Delta^l}
+            \left[
+              \nu+\Delta^l-\max\{\nu,\nu_o\}
+            \right]dG(\nu_o)$}}
+      \end{center}
+  \end{itemize}
+
+  \begin{alertblock}{Interpretation}
+    The left side is marketplace value from platform convenience plus higher
+    innovation. The right side is the dual-mode low-innovation welfare
+    benchmark.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Marketplace Price Bounds}
+  \hypertarget{mp_price_bounds_deriv}{}
+  \footnotesize
+
+  \begin{block}{On-platform price bound}
+    Fringe sellers on $M$ provide utility $\nu+b-\tau$. If consumers buy
+    $S$ on $M$, utility is $\nu+\Delta+b-p_i$. Hence $S$ must satisfy
+    \[
+      \nu+\Delta+b-p_i \geq \nu+b-\tau
+      \quad\Longrightarrow\quad
+      p_i\leq \tau+\Delta.
+    \]
+  \end{block}
+
+  \begin{block}{Direct-channel price bound}
+    If consumers buy directly from $S$, utility is $\nu+\Delta-p_o$.
+    Comparing this with fringe sellers on $M$ gives
+    \[
+      \nu+\Delta-p_o \geq \nu+b-\tau
+      \quad\Longrightarrow\quad
+      p_o\leq \tau+\Delta-b.
+    \]
+  \end{block}
+
+  \hyperlink{mp_price_bounds_src}{\beamerbutton{Back to price bounds}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Showrooming Constraint}
+  \hypertarget{mp_showrooming_deriv}{}
+  \footnotesize
+
+  \begin{block}{Compare $S$'s two channels}
+    Under the binding price bounds, both channels induce the same transaction
+    utility, $\nu+b-\tau$, but they give $S$ different margins:
+    \[
+      \text{through }M:\;(\tau+\Delta)-\tau=\Delta,
+      \qquad
+      \text{directly}:\;\tau+\Delta-b=\Delta+\tau-b.
+    \]
+  \end{block}
+
+  \begin{alertblock}{Channel choice}
+    $S$ sells through $M$ iff
+    \[
+      \Delta \geq \Delta+\tau-b
+      \quad\Longleftrightarrow\quad
+      \tau\leq b.
+    \]
+    Therefore any $\tau>b$ makes $S$ use $M$ for discovery but shift
+    transactions to the direct channel.
+  \end{alertblock}
+
+  \hyperlink{mp_showrooming_src}{\beamerbutton{Back to showrooming formula}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Marketplace Competitive Constraint}
+  \hypertarget{mp_competitive_deriv}{}
+  \footnotesize
+
+  For inside sales, $S$ solves
+  \[
+    \max_{p_i\leq\tau+\Delta}(p_i-\tau)G(\nu+b+\Delta-p_i).
+  \]
+
+  \begin{block}{Why the upper bound binds}
+    The derivative at the competitive upper bound $p_i=\tau+\Delta$ is
+    \[
+      G(\nu+b-\tau)-\Delta g(\nu+b-\tau).
+    \]
+    Since $\tau\leq b$ and $G/g$ is increasing under log-concavity of $G$,
+    Assumption (2) implies
+    \[
+      \Delta\leq\bar{\Delta}<\frac{G(\nu)}{g(\nu)}
+      \leq
+      \frac{G(\nu+b-\tau)}{g(\nu+b-\tau)}.
+    \]
+    The derivative is positive at the bound, so $S$ would like to raise
+    price further; the \textit{competitive constraint} stops it.
+  \end{block}
+
+  \hyperlink{mp_competitive_src}{\beamerbutton{Back to competitive formula}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Seller Competitive Constraint}
+  \hypertarget{seller_competitive_deriv}{}
+  \footnotesize
+
+  In seller mode, $M$ solves
+  \[
+    \max_{p_m\leq b+\sigma}p_mG(\nu+b+\sigma-p_m).
+  \]
+
+  \begin{block}{Why the upper bound binds}
+    At the competitive upper bound $p_m=b+\sigma$, the derivative is
+    \[
+      G(\nu)-(b+\sigma)g(\nu).
+    \]
+    Assumption (2) gives
+    \[
+      b+\sigma<\frac{G(\nu)}{g(\nu)},
+    \]
+    so the derivative is positive at the bound. Therefore $M$ would like
+    to raise price further, but the direct-channel fringe option imposes
+    the \textit{competitive constraint}.
+  \end{block}
+
+  \hyperlink{seller_competitive_src}{\beamerbutton{Back to seller equilibrium}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Semi-Seller Pricing}
+  \hypertarget{dual_semiseller_deriv}{}
+  \footnotesize
+
+  \begin{block}{Why $S$ prices at effective marginal cost}
+    When $\sigma\geq\Delta$, $M$'s own product is weakly better. Seller $S$
+    pays commission $\tau$ on each platform sale, so its effective marginal
+    cost is $\tau$:
+    \[
+      p_i^*=\tau.
+    \]
+  \end{block}
+
+  \begin{block}{Why $M$ sells at $p_m^*=\tau+\sigma-\Delta$}
+    Consumers are indifferent between $M$ and $S$ when
+    \[
+      \nu+\sigma+b-p_m^*
+      =
+      \nu+\Delta+b-p_i^*.
+    \]
+    Substituting $p_i^*=\tau$ gives
+    \[
+      p_m^*=\tau+\sigma-\Delta.
+    \]
+  \end{block}
+
+  \hyperlink{dual_semiseller_src}{\beamerbutton{Back to pricing cases}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Price-Squeeze Price Cap}
+  \hypertarget{dual_squeeze_deriv}{}
+  \footnotesize
+
+  \begin{block}{Price cap imposed by $M$}
+    Consumers buy $S$ rather than $M$ only if
+    \[
+      \nu+\Delta+b-p_i
+      \geq
+      \nu+\sigma+b-p_m,
+      \quad\Longrightarrow\quad
+      p_i\leq p_m+\Delta-\sigma.
+    \]
+    The competitive constraint binds, so $p_i^*=p_m^*+\Delta-\sigma$.
+  \end{block}
+
+  \begin{alertblock}{Why this is price squeeze}
+    $M$ may not sell in equilibrium, but a lower $p_m^*$ tightens the upper
+    bound on $S$'s price and forces $S$ to charge less.
+  \end{alertblock}
+
+  \hyperlink{dual_squeeze_src}{\beamerbutton{Back to price squeeze relation}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Feasible Interval for $p_m^*$}
+  \hypertarget{dual_pm_interval_deriv}{}
+  \scriptsize
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Upper bounds}
+        \begin{itemize}
+          \item $p_m^*\leq\tau$: otherwise $M$ could undercut $S$ and earn
+            an own-product margin above the commission $\tau$.
+          \item $p_m^*\leq\tau+\sigma$: otherwise consumers prefer platform
+            fringe sellers, since
+            \[
+              \nu+\sigma+b-p_m^*<\nu+b-\tau.
+            \]
+        \end{itemize}
+        Hence $p_m^*\leq\tau+\min\{\sigma,0\}$.
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Lower bounds}
+        \begin{itemize}
+          \item $S$ must not sell below effective marginal cost:
+            $p_i^*\geq\tau$.
+          \item Since $p_i^*=p_m^*+\Delta-\sigma$,
+            $p_m^*\geq\tau-\Delta+\sigma$.
+          \item $M$'s own price is nonnegative: $p_m^*\geq0$.
+        \end{itemize}
+        Hence $p_m^*\geq\max\{\tau-\Delta+\sigma,0\}$.
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{-0.05cm}
+  \[
+    p_m^*\in
+    \left[
+      \max\{\tau-\Delta+\sigma,0\},
+      \tau+\min\{\sigma,0\}
+    \right].
+  \]
+
+  \hyperlink{dual_pm_interval_src}{\beamerbutton{Back to feasible interval}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Selected Price in Price Squeeze}
+  \footnotesize
+
+  In a price-squeeze equilibrium, consumers buy from $S$ and $M$ earns
+  commission revenue:
+  \[
+    \Pi=\tau G(\nu+\sigma+b-p_m^*).
+  \]
+
+  \begin{block}{Selection rule}
+    Because $G(\cdot)$ is increasing, a lower $p_m^*$ raises transaction
+    volume and therefore raises $M$'s commission profit. The selected
+    equilibrium sets
+    \[
+      p_m^*=\max\{\tau-\Delta+\sigma,0\}.
+    \]
+  \end{block}
+
+  \hyperlink{dual_pm_interval_src}{\beamerbutton{Back to selected price}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Platform Profit in Price Squeeze}
+  \hypertarget{dual_profit_deriv}{}
+  \footnotesize
+
+  In the price-squeeze equilibrium, consumers buy $S$ through $M$, so the
+  platform earns commission $\tau$ per transaction.
+
+  \begin{block}{Demand under price squeeze}
+    Using $p_i^*=p_m^*+\Delta-\sigma$,
+    \[
+      \nu+\Delta+b-p_i^*
+      =
+      \nu+\Delta+b-(p_m^*+\Delta-\sigma)
+      =
+      \nu+\sigma+b-p_m^*.
+    \]
+    Demand is therefore $G(\nu+\sigma+b-p_m^*)$.
+  \end{block}
+
+  \begin{block}{Commission profit}
+    \[
+      \Pi
+      =
+      \tau G(\nu+\sigma+b-p_m^*).
+    \]
+    Since $G(\cdot)$ is increasing, the selected lowest $p_m^*$ maximizes
+    $M$'s commission profit among price-squeeze equilibria.
+  \end{block}
+
+  \hyperlink{dual_profit_src}{\beamerbutton{Back to platform profit}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Stage-2 Innovation Decision}
+  \hypertarget{dual_s_profit_deriv}{}
+  \hypertarget{dual_taubar_deriv}{}
+  \footnotesize
+
+  With the selected lowest $p_m^*$, $S$'s payoff combines the zero-margin
+  semi-seller case and the positive-margin price-squeeze case:
+  \[
+    \pi(\Delta)=
+    \max\{(\Delta-\sigma-\tau)G(\nu+\sigma+b),0\}-K(\Delta).
+  \]
+
+  \begin{block}{Definition of the innovation threshold}
+    Lemma 1 denotes
+    $\bar{\tau}\in(\Delta^l-\sigma,\bar{\Delta}-\sigma)$ as the commission
+    that makes $S$ indifferent between high innovation and the zero-profit
+    low-innovation option:
+    \[
+      (\bar{\Delta}-\sigma-\bar{\tau})G(\nu+b+\sigma)
+      -K(\bar{\Delta})=0.
+    \]
+    Equivalently,
+    \[
+      \bar{\tau}
+      =
+      \bar{\Delta}-\sigma
+      -
+      \frac{K(\bar{\Delta})}{G(\nu+b+\sigma)}.
+    \]
+  \end{block}
+
+  \hyperlink{dual_s_profit_src}{\beamerbutton{Back to seller payoff}}
+  \hyperlink{dual_taubar_src}{\beamerbutton{Back to innovation threshold}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Proposition 3 Profit Comparison}
+  \hypertarget{dual_prop3_deriv}{}
+  \scriptsize
+
+  If $b\leq\bar{\tau}$, the showrooming upper bound also satisfies the
+  innovation constraint, so $M$ sets $\tau^{dual}=b$ and induces
+  $\Delta^{dual}=\bar{\Delta}$.
+
+  \vspace{0.05cm}
+  If $b>\bar{\tau}$, $M$ cannot set $\tau=b$ and preserve high innovation.
+  It compares two feasible policies.
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Low fee, high innovation}
+        Set $\tau=\bar{\tau}$ and induce $\Delta=\bar{\Delta}$:
+        \[
+          \Pi_H
+          =
+          \bar{\tau}G(\nu+\sigma+b).
+        \]
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{High fee, low innovation}
+        Set $\tau=b$ and accept $\Delta=\Delta^l$:
+        \[
+          \Pi_L
+          =
+          \bigl(b+\max\{\sigma-\Delta^l,0\}\bigr)
+          G(\nu+\Delta^l).
+        \]
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \begin{alertblock}{Condition (8)}
+    $M$ preserves high innovation when
+    \[
+      \bar{\tau}G(\nu+\sigma+b)
+      \geq
+      \bigl(b+\max\{\sigma-\Delta^l,0\}\bigr)G(\nu+\Delta^l).
+    \]
+    Otherwise it sets $\tau^{dual}=b$ and accepts
+    $\Delta^{dual}=\Delta^l$.
+  \end{alertblock}
+
+  \hyperlink{dual_prop3_src}{\beamerbutton{Back to Proposition 3}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation: Welfare Condition Under Dual-Mode Ban}
+  \hypertarget{ban_welfare_condition_deriv}{}
+  \scriptsize
+
+  The welfare-improving case requires $\sigma\leq0$ and
+  $\Delta^{dual}=\Delta^l$. The ban then replaces low-innovation dual mode
+  with marketplace mode.
+
+  \begin{block}{Marketplace welfare component}
+    In marketplace mode, the binding price is $p_i^*=b+\Delta^{mkt}$ and
+    $S$ chooses $K'(\Delta^{mkt})=G(\nu)$. The relevant surplus generated by
+    platform convenience and innovation is
+    \[
+      (b+\Delta^{mkt})G(\nu)-K(\Delta^{mkt}).
+    \]
+  \end{block}
+
+  \begin{block}{Low-innovation dual-mode benchmark}
+    With $\Delta^{dual}=\Delta^l$, price squeeze generates transaction value
+    $bG(\nu+\Delta^l)$ plus consumer gains from the default innovation:
+    \[
+      \int_0^{\nu+\Delta^l}
+      \left[
+        \nu+\Delta^l-\max\{\nu,\nu_o\}
+      \right]dG(\nu_o).
+    \]
+  \end{block}
+
+  \begin{alertblock}{Condition (9)}
+    The ban raises welfare only if the marketplace component exceeds this
+    low-innovation dual-mode benchmark.
+  \end{alertblock}
+
+  \hyperlink{ban_welfare_condition_src}{\beamerbutton{Back to welfare condition}}
 \end{frame}
