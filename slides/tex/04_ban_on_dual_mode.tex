@@ -130,7 +130,7 @@
       \item model: $M$ dual mode, shows $S$.
     \end{itemize}
     \item $S$ Price-squeeze price:
-    \begin{equation}\label{eq:price-squeeze-pric-s}
+    \begin{equation}\label{eq:price-squeeze-price-s}
       p_i^* = \max\{\tau, \Delta - \sigma\} \geq \tau
     \end{equation}
     \begin{itemize}
@@ -140,7 +140,7 @@
     \end{itemize}
     \item $M$ Price-squeeze price:
       \begin{equation}\label{eq:price-squeeze-price-m}
-        p_m^*=\max\{\tau-\Delta+\sigma,0\} \leq 0
+        p_m^*=\max\{\tau-\Delta+\sigma,0\} \geq 0
       \end{equation}
     \item Price-squeeze profits: $M$ get the commission (as marketplace) from $S$'s sales:
     \begin{equation}\label{eq:price-squeeze-equi}
@@ -154,53 +154,74 @@
 
 \begin{frame}
   \frametitle{Consequence of Imitation}
-  \footnotesize
+  % \footnotesize
   
   
 
-  \begin{block}{Pricing subgame with imitation}
-    \begin{itemize}
-          \item imitation: $\sigma^* = \textcolor{darkred!85!black}{\max\{\Delta, \sigma\}}$
-        \end{itemize}
-    \begin{columns}[T,onlytextwidth]
-      \begin{column}{0.48\textwidth}
-        
-        % \vspace{0.2cm}
-        \textbf{Exploitative path Eq. \eqref{eq:exploitative-price} and \eqref{eq:exploitative-equi}}
-        \begin{equation}
-          p_m^*=\min\{\tau,b\}+ \textcolor{darkred!85!black}{\max\{\Delta, \sigma\}}
-        \end{equation}
-        \begin{equation}
-          \widetilde{\Pi}_{imi}^{exploit}
-          =(\min\{\tau,b\}+\textcolor{darkred!85!black}{\max\{\Delta, \sigma\}})G(\nu+b-\min\{\tau,b\})
-        \end{equation}
-      \end{column}
-      \begin{column}{0.48\textwidth}
-        \textbf{Price-squeeze path}
-        % \vspace{0.2cm}
-        \begin{equation}
-          p_m^*=p_i^*=\tau
-        \end{equation}
-        \begin{equation}
-          \Pi_{imi}^{sqz}=\tau G(\nu+b+\Delta-\tau)
-        \end{equation}
-        exists only when $\tau=b+\Delta$.
-      \end{column}
-    \end{columns}
+  \begin{block}{Imitation: $\sigma^* = {\max\{\Delta, \sigma\}}$}
+    If $\sigma \geq \Delta$ no imitation (change), since suppose $\Delta > \sigma \to \sigma^* = \Delta$
+    \vspace{0.2cm}
+        \begin{enumerate}
+          \item Exploitative path: Eq. \eqref{eq:exploitative-price}, as a seller extracts innovation rents.
+          \begin{equation}
+          p_m^* \uparrow =\min\{\tau,b\}+ \textcolor{darkred!85!black}{\Delta}
+          \end{equation}
+          % \begin{equation}
+          % \widetilde{\Pi}_{imi}^{exploit}
+          % =(\min\{\tau,b\}+\textcolor{darkred!85!black}{\Delta})G(\nu+b-\min\{\tau,b\})
+          % \end{equation}
+          \item Price-squeeze path: Eq. \eqref{eq:price-squeeze-price-m} and \eqref{eq:price-squeeze-price-s}, as dual mode squeezes prices to generate more sales $p^*_m = p^*_i = \tau$
+          \begin{equation}
+            \begin{aligned}
+              p_m^* \downarrow &= \max\{\tau, \Delta - \textcolor{darkred!85!black}{\Delta} \} = \tau \\
+              p_i^* \downarrow &= \max\{\tau + \Delta - \textcolor{darkred!85!black}{\Delta}, 0\} = \tau
+            \end{aligned}
+          \end{equation}
+          % \begin{equation}
+          %   \Pi_{imi}^{sqz}=\tau G(\nu+b+\Delta-\tau)
+          % \end{equation}
+          \item $S$'s innovation: Eq. \eqref{eq:price-squeeze-equi}, no innovation $\Delta^* = \Delta^{l}$
+          \begin{equation}
+            \Delta^* \downarrow =\arg\max_{\Delta\geq\Delta^l}\{-K(\Delta)\}=\Delta^l 
+          \end{equation}
+        \end{enumerate}
   \end{block}
 
-  \begin{alertblock}{Effect on $S$'s innovation}
-    In both paths, $S$'s continuation payoff is
-    \begin{equation}
-      \pi_S(\Delta)=-K(\Delta)
-      \quad\Longrightarrow\quad
-      \Delta^*=\arg\max_{\Delta\geq\Delta^l}\{-K(\Delta)\}=\Delta^l .
-    \end{equation}
-  \end{alertblock}
+
 
   % \textbf{Economic meaning:} imitation turns $S$'s innovation into an asset
   % that $M$ can appropriate. Since a higher $\Delta$ raises $M$'s extractable
   % value but not $S$'s margin, $S$ chooses the minimum innovation level.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Consequence of Self-Preferencing}
+\begin{block}{Self-preferencing: $\tau \leq b \to \tau \leq b+\Delta$}
+  If 
+
+  \vspace{0.2cm}
+  \begin{enumerate}
+    \item Recommendation rule: 
+    \begin{equation}
+      \Delta+b-p_i
+      \geq
+      \max\{\Delta-p_o,\ b-\tau,\ 0\}
+    \end{equation}
+
+
+    \item High-fee path: $M$ can extract $S$'s margin as a marketplace.
+    \begin{equation}
+      \tau^*=b+\Delta,\qquad
+      p_i^*=\tau^*,\qquad
+      \pi_S=-K(\Delta)
+    \end{equation}
+
+    \item Hiding path: $M$ shields its own product from competition with $S$.
+    \begin{equation}
+      p_m^*=\min\{\tau,b\}+\sigma
+    \end{equation}
+  \end{enumerate}
+\end{block}
 \end{frame}
 
 \begin{frame}
