@@ -3,7 +3,7 @@
 \begin{frame}
   \frametitle{What Is Added?}
   \footnotesize
-  This part adds two practices to the baseline dual-mode model: \textbf{product imitation} and \textbf{Self-preferencing}.
+  This part adds two practices to the baseline dual-mode model: \textbf{product imitation} and \textbf{self-preferencing}.
 
   \begin{block}{Product imitation}
     \begin{itemize}
@@ -85,10 +85,180 @@
 
   \textbf{Changes from the baseline}
   \begin{itemize}
-    \item $M$ copying choice: $M$ imitates or not.
+    \item $M$ copying choice: $M$ imitates $S$ or not.
     \item $M$ disclosure choice: $M$ shows $S$ or not.
   \end{itemize}
 \end{frame}
+
+\begin{frame}
+  \frametitle{Review: Exploitative Equilibrium}
+
+    \begin{enumerate}
+      \item Exploitative equilibrium: $M$ hides $S$ and charges the highest price allowed by outside options.
+      \begin{itemize}
+        % \item condition: $\sigma \geq \Delta^*$.
+        \item mode: $M$ as seller, don't show $S$.
+      \end{itemize}
+      \item $M$ exploitative price:
+      \begin{equation}\label{eq:exploitative-price}
+         p_m^* = \min\{\tau, b\} + \sigma
+      \end{equation}
+      \begin{itemize}
+        \item $M$ vs fringe ($p_f \geq \tau$) through marketplace: $\nu + \sigma + b - p_m^* \geq \nu + b - p_f  \Rightarrow p_m^* \leq \tau + \sigma$ 
+        \item $M$ vs fringe not through marketplace: $\nu + \sigma + b - p_m^* \geq \nu \Rightarrow p_m^* \leq b + \sigma$
+      \end{itemize}
+      \item $M$ exploitative profit:
+      \begin{equation}\label{eq:exploitative-equi}
+        \begin{aligned}
+          \Pi^{exploit} & = \Pi^{sell} = p^*_m G(\nu+ b + \sigma - p^*_m) \\
+          & = (\min\{\tau + b\} + \sigma) G(\nu + b - \min\{\tau, b\}).
+        \end{aligned}
+      \end{equation}
+    \end{enumerate}
+
+
+\end{frame}
+  
+
+
+  
+\begin{frame}
+  \frametitle{Review: Price Squeeze Equilibrium}
+  \begin{enumerate}
+    \item Price-squeeze Equilibrium: $M$ shows $S$, but caps $S$'s inside price and margin.
+    \begin{itemize}
+      \item model: $M$ dual mode, shows $S$.
+    \end{itemize}
+    \item $S$ Price-squeeze price:
+    \begin{equation}\label{eq:price-squeeze-price-s}
+      p_i^* = \max\{\tau, \Delta - \sigma\} \geq \tau
+    \end{equation}
+    \begin{itemize}
+      \item particpate vs not: $p_i^* - \tau \geq 0 \Rightarrow p_i^* \geq \tau$.
+      \item sell or not: $\Delta - p_i^* \geq \sigma - p_m^* \Rightarrow p_i^* \leq p_m^* + \Delta - \sigma$. ($M$ sets the lowest price (\textbf{as seller}) to squeeze $S$'s)
+      
+    \end{itemize}
+    \item $M$ Price-squeeze price:
+      \begin{equation}\label{eq:price-squeeze-price-m}
+        p_m^*=\max\{\tau-\Delta+\sigma,0\} \geq 0
+      \end{equation}
+    \item Price-squeeze profits: $M$ get the commission (as marketplace) from $S$'s sales:
+    \begin{equation}\label{eq:price-squeeze-equi}
+        \begin{aligned}
+          \Pi^{sqz} & = \Pi^{dual} = \tau G(\nu + b + \Delta - p_i^*) = \tau G(\nu + \sigma + b - p^*_m) \\
+        \pi^{sqz} & = (p_i^*-\tau) G(\nu + b + \Delta - p_i^*) = (p_i^*-\tau) G(\nu + \sigma + b - p^*_m) 
+        \end{aligned}
+    \end{equation}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Consequence of Imitation}
+  % \footnotesize
+  
+  
+
+  \begin{block}{Imitation: $\sigma^* = {\max\{\Delta, \sigma\}}$}
+    If $\sigma \geq \Delta$ no imitation (change), since suppose $\Delta > \sigma \to \sigma^* = \Delta$
+    \vspace{0.2cm}
+        \begin{enumerate}
+          \item Exploitative path: Eq. \eqref{eq:exploitative-price}, as a seller extracts innovation rents.
+          \begin{equation}
+          p_m^* \uparrow =\min\{\tau,b\}+ \textcolor{darkred!85!black}{\Delta}
+          \end{equation}
+          % \begin{equation}
+          % \widetilde{\Pi}_{imi}^{exploit}
+          % =(\min\{\tau,b\}+\textcolor{darkred!85!black}{\Delta})G(\nu+b-\min\{\tau,b\})
+          % \end{equation}
+          \item Price-squeeze path: Eq. \eqref{eq:price-squeeze-price-m} and \eqref{eq:price-squeeze-price-s}, as dual mode squeezes prices to generate more sales $p^*_m = p^*_i = \tau$
+          \begin{equation}
+            \begin{aligned}
+              p_m^* \downarrow &= \max\{\tau, \Delta - \textcolor{darkred!85!black}{\Delta} \} = \tau \\
+              p_i^* \downarrow &= \max\{\tau + \Delta - \textcolor{darkred!85!black}{\Delta}, 0\} = \tau
+            \end{aligned}
+          \end{equation}
+          % \begin{equation}
+          %   \Pi_{imi}^{sqz}=\tau G(\nu+b+\Delta-\tau)
+          % \end{equation}
+          \item $S$'s innovation: Eq. \eqref{eq:price-squeeze-equi}, no innovation $\Delta^* = \Delta^{l}$
+          \begin{equation}
+            \Delta^* \downarrow =\arg\max_{\Delta\geq\Delta^l}\{-K(\Delta)\}=\Delta^l 
+          \end{equation}
+        \end{enumerate}
+  \end{block}
+
+
+
+  % \textbf{Economic meaning:} imitation turns $S$'s innovation into an asset
+  % that $M$ can appropriate. Since a higher $\Delta$ raises $M$'s extractable
+  % value but not $S$'s margin, $S$ chooses the minimum innovation level.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Consequence of Self-Preferencing}
+\begin{block}{Self-preferencing: $\tau \leq b \to \tau \leq b+\Delta$}
+  If 
+
+  \vspace{0.2cm}
+  \begin{enumerate}
+    \item Recommendation rule: 
+    \begin{equation}
+      \Delta+b-p_i
+      \geq
+      \max\{\Delta-p_o,\ b-\tau,\ 0\}
+    \end{equation}
+
+
+    \item High-fee path: $M$ can extract $S$'s margin as a marketplace.
+    \begin{equation}
+      \tau^*=b+\Delta,\qquad
+      p_i^*=\tau^*,\qquad
+      \pi_S=-K(\Delta)
+    \end{equation}
+
+    \item Hiding path: $M$ shields its own product from competition with $S$.
+    \begin{equation}
+      p_m^*=\min\{\tau,b\}+\sigma
+    \end{equation}
+  \end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Consequence of Self-Preferencing}
+  \footnotesize
+  Self-preferencing means that discovery of $S$ is no longer automatic:
+  after observing prices, $M$ can show $S$ or hide it.
+
+  \begin{block}{Showrooming constraint is relaxed}
+    Without steering, $S$ can use the platform for discovery and then direct
+    consumers to its outside channel, so
+    \begin{equation}
+      \tau\leq b .
+    \end{equation}
+    With steering, a high-fee price squeeze can still be sustained:
+    \begin{equation}
+      \tau=b+\Delta,\qquad p_i^*=\tau,\qquad
+      \Pi_M=(b+\Delta)G(\nu),\qquad \pi_S=-K(\Delta).
+    \end{equation}
+  \end{block}
+
+  \begin{block}{Competition from $S$ can also be switched off}
+    If $M$ hides $S$, consumers compare $M$ only with fringe sellers and no
+    purchase. With imitation, this gives
+    \begin{equation}
+      p_m^*=b+\Delta,\qquad
+      \Pi_M=(b+\Delta)G(\nu),\qquad
+      CS=CS^0 .
+    \end{equation}
+  \end{block}
+
+  \textbf{Economic meaning:} self-preferencing removes the visibility threat
+  that used to discipline $M$'s commission and pricing. The platform can either
+  tax $S$ through a high fee or steer consumers to its own product, so
+  on-platform price competition largely disappears.
+\end{frame}
+
 
 \begin{frame}
   \frametitle{Marketplace and Seller Mode}
@@ -136,6 +306,7 @@
 \end{frame}
 
 
+
 % \begin{frame}
 %   \frametitle{Seller mode}
 
@@ -158,119 +329,123 @@
 % \end{frame}
 
 \begin{frame}
-  \frametitle{Dual Mode: Recommendation Decision}
-  % \footnotesize
-
-  \begin{block}{What does $M$ compare?}
-    \begin{itemize}
-      \item Own expected margin from selling $M$'s product or imitation.
-      \item Expected commission from showing $S$.
-    \end{itemize}
-  \end{block}
-
-  \begin{block}{Recommendation rule}
-    \begin{itemize}
-    \item $M$ choose to hide $S$
-    \begin{itemize}
-      \item $M$'s expected margin $>$ expected commission from $S$;
-      \item Or the marketplace-purchase condition for $S$, Eq. \eqref{eq:show-s-marketplace}, fails.
-    \end{itemize}
-    \item $M$ choose to show $S$ 
-    \begin{itemize}
-      \item $M$'s expected margin $<$ expected commission from $S$;
-      \item and the marketplace-purchase condition for $S$, Eq. \eqref{eq:show-s-marketplace}, holds.
-    \end{itemize}
-  \end{itemize}
-  \end{block}
-
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Pricing Without Imitation}
-  \footnotesize
-  Without imitation, the subgame can be exploitative or price-squeezing.
-  \begin{enumerate}
-    \item \textbf{Exploitative}: $M$ hides $S$, and charges the highest price allowed by outside options.
-    \item \textbf{Price squeeze}: $M$ shows $S$, but caps $S$'s inside price and margin.
-  \end{enumerate}
-
-  \begin{block}{Exploitative equilibrium}
-
-    \begin{itemize}
-      \item \textbf{Exploitative price}: 
-      \begin{equation}
-        p_m^*=\min\{\tau,b\}+\sigma
-        \label{eq:pm*}
-      \end{equation}
-      \begin{itemize}
-        \item $M$ vs fringe through marketplace: $\nu + \sigma + b - p_m^* > \nu + b - \tau$ $\Longrightarrow$ $p_m^* < \tau + \sigma$
-        \item $M$ vs fringe not through marketplace: $\nu + \sigma + b - p_m^* > \nu $ $\Longrightarrow$ $p_m^* < b + \sigma$
-      \end{itemize}
-      \item \textbf{Exploitative profit}: using the seller-mode profit function, Eq. \eqref{eq:seller-profit}, and Eq. \eqref{eq:pm*}:
-      \begin{equation}
-        \begin{aligned}
-          \Pi_{no-imi}^{exploit} &= p^*_m \times G(\nu+b+\sigma-p^*_m) \\
-          & = (\min\{\tau,b\}+\sigma)G(\nu+b-\min\{\tau,b\}).
-        \end{aligned}
-      \end{equation}
-    \end{itemize}
-  \end{block}
-
   
 \end{frame}
 
-\begin{frame}
-  \frametitle{Pricing Without Imitation: Price Squeeze}
-  \footnotesize
+% \begin{frame}
+%   \frametitle{Dual Mode: Recommendation Decision}
+%   % \footnotesize
 
-  Without imitation, products and quality gaps are the same as in the baseline.
-  The only new instrument is steering:
-  \begin{itemize}
-    \item If $S$ is shown, pricing follows the baseline price-squeeze logic.
-    \item Self-preferencing adds one more constraint: $M$ must prefer showing $S$ to hiding it.
-  \end{itemize}
+%   \begin{block}{What does $M$ compare?}
+%     \begin{itemize}
+%       \item Own expected margin from selling $M$'s product or imitation.
+%       \item Expected commission from showing $S$.
+%     \end{itemize}
+%   \end{block}
+
+%   \begin{block}{Recommendation rule}
+%     \begin{itemize}
+%     \item $M$ choose to hide $S$
+%     \begin{itemize}
+%       \item $M$'s expected margin $>$ expected commission from $S$;
+%       \item Or the marketplace-purchase condition for $S$, Eq. \eqref{eq:show-s-marketplace}, fails.
+%     \end{itemize}
+%     \item $M$ choose to show $S$ 
+%     \begin{itemize}
+%       \item $M$'s expected margin $<$ expected commission from $S$;
+%       \item and the marketplace-purchase condition for $S$, Eq. \eqref{eq:show-s-marketplace}, holds.
+%     \end{itemize}
+%   \end{itemize}
+%   \end{block}
+
+% \end{frame}
 
 
-\end{frame}
 
-\begin{frame}
-  \frametitle{Pricing With Imitation \footnote{Imitation matters when $S$'s product is better than $M$'s original product $\Delta>\sigma$.}}
-  \footnotesize
-  $M$ can sells the \textbf{copied product ($\sigma = \Delta$)} to all consumers at
-  \begin{block}{Exploitative equilibrium}
-    \begin{equation}
-      \begin{aligned}
-        p_m^*& =\min\{\tau,b\}+ \sigma \qquad (\text{imitation: }\sigma = \Delta) \\
-        & = \min\{\tau,b\}+ \textcolor{red}{\Delta} .
-      \end{aligned}
-    \end{equation}
+% \begin{frame}
+%   \frametitle{Pricing Without Imitation}
+%   \footnotesize
+%   Without imitation, the subgame can be exploitative or price-squeezing.
+%   \begin{enumerate}
+%     \item \textbf{Exploitative}: $M$ hides $S$, and charges the highest price allowed by outside options.
+%     \item \textbf{Price squeeze}: $M$ shows $S$, but caps $S$'s inside price and margin.
+%   \end{enumerate}
 
-    \begin{equation}
-      \begin{aligned}
-        \tilde{\Pi}^{exploit}_{imi} & = p^*_m \times G(\nu+b+\textcolor{red}{\Delta}-p^*_m) \\
-        & = (\min\{\tau,b\}+\Delta)G(\nu+b-\min\{\tau,b\}).
-      \end{aligned}
-    \end{equation}
-  \end{block}
+%   \begin{block}{Exploitative equilibrium}
 
-  \begin{block}{Price-squeeze equilibrium}
-    \begin{equation}\label{eq:pi*}
-      \begin{aligned}
-        p_i^* &=p_m^* + \Delta - \sigma \qquad (\text{imitation: }\sigma = \Delta) \\
-        & = \min\{\tau,b\} = \tau .
-      \end{aligned}
-    \end{equation}
+%     \begin{itemize}
+%       \item \textbf{Exploitative price}: 
+%       \begin{equation}
+%         p_m^*=\min\{\tau,b\}+\sigma
+%         \label{eq:pm*}
+%       \end{equation}
+%       \begin{itemize}
+%         \item $M$ vs fringe through marketplace: $\nu + \sigma + b - p_m^* > \nu + b - \tau$ $\Longrightarrow$ $p_m^* < \tau + \sigma$
+%         \item $M$ vs fringe not through marketplace: $\nu + \sigma + b - p_m^* > \nu $ $\Longrightarrow$ $p_m^* < b + \sigma$
+%       \end{itemize}
+%       \item \textbf{Exploitative profit}: using the seller-mode profit function, Eq. \eqref{eq:seller-profit}, and Eq. \eqref{eq:pm*}:
+%       \begin{equation}
+%         \begin{aligned}
+%           \Pi_{no-imi}^{exploit} &= p^*_m \times G(\nu+b+\sigma-p^*_m) \\
+%           & = (\min\{\tau,b\}+\sigma)G(\nu+b-\min\{\tau,b\}).
+%         \end{aligned}
+%       \end{equation}
+%     \end{itemize}
+%   \end{block}
 
-    \textbf{notice:} if $M$ can imitation $p_i^* = \tau$ does not depend on $\Delta$, $S$ will not innovate.
-  \end{block}
+  
+% \end{frame}
 
-  % \begin{alertblock}{Mechanism}
-  %   Imitation extracts innovation surplus; steering prevents $S$ from using
-  %   discovery to discipline the platform.
-  % \end{alertblock}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Pricing Without Imitation: Price Squeeze}
+%   \footnotesize
+
+%   Without imitation, products and quality gaps are the same as in the baseline.
+%   The only new instrument is steering:
+%   \begin{itemize}
+%     \item If $S$ is shown, pricing follows the baseline price-squeeze logic.
+%     \item Self-preferencing adds one more constraint: $M$ must prefer showing $S$ to hiding it.
+%   \end{itemize}
+
+
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Pricing With Imitation \footnote{Imitation matters when $S$'s product is better than $M$'s original product $\Delta>\sigma$.}}
+%   \footnotesize
+%   $M$ can sells the \textbf{copied product ($\sigma = \Delta$)} to all consumers at
+%   \begin{block}{Exploitative equilibrium}
+%     \begin{equation}
+%       \begin{aligned}
+%         p_m^*& =\min\{\tau,b\}+ \sigma \qquad (\text{imitation: }\sigma = \Delta) \\
+%         & = \min\{\tau,b\}+ \textcolor{red}{\Delta} .
+%       \end{aligned}
+%     \end{equation}
+
+%     \begin{equation}
+%       \begin{aligned}
+%         \tilde{\Pi}^{exploit}_{imi} & = p^*_m \times G(\nu+b+\textcolor{red}{\Delta}-p^*_m) \\
+%         & = (\min\{\tau,b\}+\Delta)G(\nu+b-\min\{\tau,b\}).
+%       \end{aligned}
+%     \end{equation}
+%   \end{block}
+
+%   \begin{block}{Price-squeeze equilibrium}
+%     \begin{equation}\label{eq:pi*}
+%       \begin{aligned}
+%         p_i^* &=p_m^* + \Delta - \sigma \qquad (\text{imitation: }\sigma = \Delta) \\
+%         & = \min\{\tau,b\} = \tau .
+%       \end{aligned}
+%     \end{equation}
+
+%     \textbf{notice:} if $M$ can imitation $p_i^* = \tau$ does not depend on $\Delta$, $S$ will not innovate.
+%   \end{block}
+
+%   % \begin{alertblock}{Mechanism}
+%   %   Imitation extracts innovation surplus; steering prevents $S$ from using
+%   %   discovery to discipline the platform.
+%   % \end{alertblock}
+% \end{frame}
 
 \begin{frame}
   \frametitle{Proposition 5: Dual Mode Equilibrium}
